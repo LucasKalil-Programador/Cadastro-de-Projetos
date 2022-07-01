@@ -1,0 +1,102 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema cadastro_projeto_db
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema cadastro_projeto_db
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `cadastro_projeto_db` DEFAULT CHARACTER SET utf8 ;
+USE `cadastro_projeto_db` ;
+
+-- -----------------------------------------------------
+-- Table `cadastro_projeto_db`.`Aluno`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cadastro_projeto_db`.`Aluno` (
+  `idAluno` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(45) NOT NULL,
+  `semestre` VARCHAR(45) NOT NULL,
+  `matricula` CHAR(10) NOT NULL,
+  PRIMARY KEY (`idAluno`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cadastro_projeto_db`.`Orientador`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cadastro_projeto_db`.`Orientador` (
+  `idOrientador` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(45) NOT NULL,
+  `Materias` MEDIUMTEXT NOT NULL,
+  PRIMARY KEY (`idOrientador`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cadastro_projeto_db`.`Universidade`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cadastro_projeto_db`.`Universidade` (
+  `idUniversidade` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idUniversidade`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cadastro_projeto_db`.`Projeto`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cadastro_projeto_db`.`Projeto` (
+  `idProjeto` INT NOT NULL AUTO_INCREMENT,
+  `nome` TINYTEXT NOT NULL,
+  `tipo` TINYTEXT NOT NULL,
+  `descricao` MEDIUMTEXT NOT NULL,
+  `referencias_usadas` MEDIUMTEXT NOT NULL,
+  `Orientador_idOrientador` INT NOT NULL,
+  `Universidade_idUniversidade` INT NOT NULL,
+  PRIMARY KEY (`idProjeto`),
+  INDEX `fk_Projeto_Orientador1_idx` (`Orientador_idOrientador` ASC) VISIBLE,
+  INDEX `fk_Projeto_Universidade1_idx` (`Universidade_idUniversidade` ASC) VISIBLE,
+  CONSTRAINT `fk_Projeto_Orientador1`
+    FOREIGN KEY (`Orientador_idOrientador`)
+    REFERENCES `cadastro_projeto_db`.`Orientador` (`idOrientador`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Projeto_Universidade1`
+    FOREIGN KEY (`Universidade_idUniversidade`)
+    REFERENCES `cadastro_projeto_db`.`Universidade` (`idUniversidade`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `cadastro_projeto_db`.`Projeto_has_Aluno`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `cadastro_projeto_db`.`Projeto_has_Aluno` (
+  `idProjeto_has_Aluno` INT NOT NULL AUTO_INCREMENT,
+  `Projeto_idProjeto` INT NOT NULL,
+  `Aluno_idAluno` INT NOT NULL,
+  INDEX `fk_Projeto_has_Aluno_Aluno1_idx` (`Aluno_idAluno` ASC) VISIBLE,
+  INDEX `fk_Projeto_has_Aluno_Projeto1_idx` (`Projeto_idProjeto` ASC) VISIBLE,
+  PRIMARY KEY (`idProjeto_has_Aluno`),
+  CONSTRAINT `fk_Projeto_has_Aluno_Projeto1`
+    FOREIGN KEY (`Projeto_idProjeto`)
+    REFERENCES `cadastro_projeto_db`.`Projeto` (`idProjeto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Projeto_has_Aluno_Aluno1`
+    FOREIGN KEY (`Aluno_idAluno`)
+    REFERENCES `cadastro_projeto_db`.`Aluno` (`idAluno`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
