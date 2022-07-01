@@ -20,6 +20,6 @@ Diagrama do banco de dados Mysql workbench
 </h2>
   
 <div>
-<img src="https://user-images.githubusercontent.com/82661706/176912133-b2b54697-5fe7-4182-8607-9168496722b4.png" width=700px/>
+<img src="https://user-images.githubusercontent.com/82661706/176945583-f76a2d0a-d66c-4ee7-baa5-47221ad0ca78.PNG" width=700px/>
 </div>
 </div>
