@@ -18,18 +18,5 @@ namespace Cadastro_projetos
         {
             InitializeComponent();
         }
-        
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string nome = NomeTextBox.Text;
-            string matricula = matriculatextBot.Text;
-            string semestre = semestreTextBox.Text;
-
-            Connection.ExecuteQuery($"INSERT INTO Aluno (nome, matricula, semestre) values ('{nome}','{matricula}','{semestre}');");
-
-            matriculatextBot.Clear();
-            semestreTextBox.Clear();
-            NomeTextBox.Clear();
-        }
     }
 }

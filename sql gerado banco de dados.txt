@@ -19,8 +19,8 @@ USE `cadastro_projeto_db` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cadastro_projeto_db`.`Aluno` (
   `idAluno` INT NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(45) NOT NULL,
-  `semestre` VARCHAR(45) NOT NULL,
+  `nome` VARCHAR(120) NOT NULL,
+  `semestre` TINYINT UNSIGNED NOT NULL,
   `matricula` CHAR(10) NOT NULL,
   PRIMARY KEY (`idAluno`))
 ENGINE = InnoDB;
@@ -31,7 +31,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cadastro_projeto_db`.`Orientador` (
   `idOrientador` INT NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(45) NOT NULL,
+  `nome` VARCHAR(120) NOT NULL,
   `Materias` MEDIUMTEXT NOT NULL,
   PRIMARY KEY (`idOrientador`))
 ENGINE = InnoDB;
@@ -42,7 +42,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `cadastro_projeto_db`.`Universidade` (
   `idUniversidade` INT NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(45) NOT NULL,
+  `nome` VARCHAR(120) NOT NULL,
   PRIMARY KEY (`idUniversidade`))
 ENGINE = InnoDB;
 
