@@ -1,6 +1,6 @@
-﻿namespace Cadastro_projetos
+﻿namespace Cadastro_projetos.Window
 {
-    partial class AdvisorArea
+    partial class AreasCrontrol
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -28,17 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // AdvisorArea
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
-            this.Name = "AdvisorArea";
-            this.Size = new System.Drawing.Size(600, 412);
-            this.ResumeLayout(false);
-
         }
 
         #endregion
