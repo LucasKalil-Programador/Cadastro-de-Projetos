@@ -28,10 +28,79 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.AdvisorArea = new Cadastro_projetos.AdvisorArea();
+            this.ProjectArea = new Cadastro_projetos.ProjectArea();
+            this.StudentArea = new Cadastro_projetos.StudentArea();
+            this.TeamArea = new Cadastro_projetos.TeamArea();
+            this.UniversityArea = new Cadastro_projetos.UniversityArea();
+            this.SuspendLayout();
+            // 
+            // AdvisorArea
+            // 
+            this.AdvisorArea.BackColor = System.Drawing.Color.Silver;
+            this.AdvisorArea.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AdvisorArea.Location = new System.Drawing.Point(0, 0);
+            this.AdvisorArea.Name = "AdvisorArea";
+            this.AdvisorArea.Size = new System.Drawing.Size(561, 415);
+            this.AdvisorArea.TabIndex = 0;
+            // 
+            // ProjectArea
+            // 
+            this.ProjectArea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.ProjectArea.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProjectArea.Location = new System.Drawing.Point(0, 0);
+            this.ProjectArea.Name = "ProjectArea";
+            this.ProjectArea.Size = new System.Drawing.Size(561, 415);
+            this.ProjectArea.TabIndex = 1;
+            // 
+            // StudentArea
+            // 
+            this.StudentArea.BackColor = System.Drawing.Color.Silver;
+            this.StudentArea.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StudentArea.Location = new System.Drawing.Point(0, 0);
+            this.StudentArea.Name = "StudentArea";
+            this.StudentArea.Size = new System.Drawing.Size(561, 415);
+            this.StudentArea.TabIndex = 2;
+            // 
+            // TeamArea
+            // 
+            this.TeamArea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.TeamArea.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TeamArea.Location = new System.Drawing.Point(0, 0);
+            this.TeamArea.Name = "TeamArea";
+            this.TeamArea.Size = new System.Drawing.Size(561, 415);
+            this.TeamArea.TabIndex = 3;
+            // 
+            // UniversityArea
+            // 
+            this.UniversityArea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.UniversityArea.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UniversityArea.Location = new System.Drawing.Point(0, 0);
+            this.UniversityArea.Name = "UniversityArea";
+            this.UniversityArea.Size = new System.Drawing.Size(561, 415);
+            this.UniversityArea.TabIndex = 4;
+            // 
+            // AreasCrontrol
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.TeamArea);
+            this.Controls.Add(this.AdvisorArea);
+            this.Controls.Add(this.ProjectArea);
+            this.Controls.Add(this.UniversityArea);
+            this.Controls.Add(this.StudentArea);
+            this.Name = "AreasCrontrol";
+            this.Size = new System.Drawing.Size(561, 415);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private AdvisorArea AdvisorArea;
+        private ProjectArea ProjectArea;
+        private StudentArea StudentArea;
+        private TeamArea TeamArea;
+        private UniversityArea UniversityArea;
     }
 }
