@@ -6,10 +6,5 @@ namespace Cadastro_projetos.WindowSys
         {
             InitializeComponent();
         }
-
-        private void On_SizeChange(object sender, EventArgs e)
-        {
-            Console.WriteLine(Height + ";" + Width);
-        }
     }
 }

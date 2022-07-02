@@ -171,7 +171,6 @@
             this.Name = "Window";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.SizeChanged += new System.EventHandler(this.On_SizeChange);
             this.ButtonsLayout.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
