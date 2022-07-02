@@ -28,17 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.ButtonsLayout = new System.Windows.Forms.TableLayoutPanel();
             this.StudentButton = new System.Windows.Forms.Button();
             this.ProjectButton = new System.Windows.Forms.Button();
             this.TeamButton = new System.Windows.Forms.Button();
             this.AdvisorButton = new System.Windows.Forms.Button();
             this.UniversityButton = new System.Windows.Forms.Button();
-            this.ButtonsLayout = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.AreasCrontrol = new Cadastro_projetos.Window.AreasCrontroll();
+            this.areasCrontrol = new Cadastro_projetos.Window.AreasCrontrol();
             this.ButtonsLayout.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // ButtonsLayout
+            // 
+            this.ButtonsLayout.ColumnCount = 1;
+            this.ButtonsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.ButtonsLayout.Controls.Add(this.UniversityButton, 0, 4);
+            this.ButtonsLayout.Controls.Add(this.AdvisorButton, 0, 3);
+            this.ButtonsLayout.Controls.Add(this.TeamButton, 0, 2);
+            this.ButtonsLayout.Controls.Add(this.ProjectButton, 0, 1);
+            this.ButtonsLayout.Controls.Add(this.StudentButton, 0, 0);
+            this.ButtonsLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonsLayout.Location = new System.Drawing.Point(0, 0);
+            this.ButtonsLayout.Margin = new System.Windows.Forms.Padding(0);
+            this.ButtonsLayout.Name = "ButtonsLayout";
+            this.ButtonsLayout.RowCount = 5;
+            this.ButtonsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.ButtonsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.ButtonsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.ButtonsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.ButtonsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.ButtonsLayout.Size = new System.Drawing.Size(225, 421);
+            this.ButtonsLayout.TabIndex = 5;
             // 
             // StudentButton
             // 
@@ -116,35 +138,13 @@
             this.UniversityButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.UniversityButton.UseVisualStyleBackColor = true;
             // 
-            // ButtonsLayout
-            // 
-            this.ButtonsLayout.ColumnCount = 1;
-            this.ButtonsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.ButtonsLayout.Controls.Add(this.UniversityButton, 0, 4);
-            this.ButtonsLayout.Controls.Add(this.AdvisorButton, 0, 3);
-            this.ButtonsLayout.Controls.Add(this.TeamButton, 0, 2);
-            this.ButtonsLayout.Controls.Add(this.ProjectButton, 0, 1);
-            this.ButtonsLayout.Controls.Add(this.StudentButton, 0, 0);
-            this.ButtonsLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ButtonsLayout.Location = new System.Drawing.Point(0, 0);
-            this.ButtonsLayout.Margin = new System.Windows.Forms.Padding(0);
-            this.ButtonsLayout.Name = "ButtonsLayout";
-            this.ButtonsLayout.RowCount = 5;
-            this.ButtonsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.ButtonsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.ButtonsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.ButtonsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.ButtonsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.ButtonsLayout.Size = new System.Drawing.Size(225, 421);
-            this.ButtonsLayout.TabIndex = 5;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.59727F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.40273F));
             this.tableLayoutPanel1.Controls.Add(this.ButtonsLayout, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.AreasCrontrol, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.areasCrontrol, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -153,13 +153,13 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(879, 421);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
-            // AreasCrontrol
+            // areasCrontrol1
             // 
-            this.AreasCrontrol.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AreasCrontrol.Location = new System.Drawing.Point(228, 3);
-            this.AreasCrontrol.Name = "AreasCrontrol";
-            this.AreasCrontrol.Size = new System.Drawing.Size(648, 415);
-            this.AreasCrontrol.TabIndex = 6;
+            this.areasCrontrol.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.areasCrontrol.Location = new System.Drawing.Point(228, 3);
+            this.areasCrontrol.Name = "areasCrontrol1";
+            this.areasCrontrol.Size = new System.Drawing.Size(648, 415);
+            this.areasCrontrol.TabIndex = 6;
             // 
             // Window
             // 
@@ -179,14 +179,13 @@
         }
 
         #endregion
-
-        private Button StudentButton;
-        private Button ProjectButton;
-        private Button TeamButton;
-        private Button AdvisorButton;
-        private Button UniversityButton;
         private TableLayoutPanel ButtonsLayout;
+        private Button UniversityButton;
+        private Button AdvisorButton;
+        private Button TeamButton;
+        private Button ProjectButton;
+        private Button StudentButton;
         private TableLayoutPanel tableLayoutPanel1;
-        private Cadastro_projetos.Window.AreasCrontroll AreasCrontrol;
+        private Cadastro_projetos.Window.AreasCrontrol areasCrontrol;
     }
 }
