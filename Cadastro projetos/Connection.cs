@@ -4,29 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using Cadastro_projetos.Entities;
 
 namespace Cadastro_projetos.SQLConnection
 {
     internal class Connection
     {
-        private static MySqlConnection connection;
 
-        public static MySqlConnection GetConnection()
+        private static string ConnectionString = "server=localhost;database=cadastro_projeto_db;uid=root;pwd=admin;";
+        private static MySqlConnection connection = GetConnectionInternal();
+
+        private static MySqlConnection GetConnectionInternal()
         {
-            if(connection == null || !connection.Ping())
-            {
-                connection = new MySqlConnection("server=localhost;database=cadastro_projeto_db;uid=root;pwd=admin;");
-                connection.Open();
-            }
+            MySqlConnection connection = new MySqlConnection(ConnectionString);
+             connection.Open();
             return connection;
         }
-
-        public static void ExecuteQuery(string query)
+        
+        public static void InsertAluno(Aluno aluno)
         {
-            MySqlConnection connection = GetConnection();
-            MySqlCommand cmd = new MySqlCommand(query, connection);
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
+            lock (connection)
+            {
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO Aluno(nome,semestre,matricula) values " +
+                    $"('{aluno.Name}',{aluno.Semester},'{aluno.RegisterNumber}');", connection);
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }

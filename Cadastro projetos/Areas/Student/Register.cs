@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Cadastro_projetos.Entities;
+using Cadastro_projetos.SQLConnection;
 
 namespace Cadastro_projetos.Student
 {
@@ -15,6 +17,16 @@ namespace Cadastro_projetos.Student
         public Register()
         {
             InitializeComponent();
+        }
+
+        private void RegisterButton_Click(object sender, EventArgs e)
+        {
+            string name = NameTextBox.Text;
+            string semester = SemesterNumeric.Text;
+            string registerNumber = RegisterNumberTextBox.Text;
+
+            Aluno aluno = new Aluno(String.Empty, name, registerNumber, semester);
+            Connection.InsertAluno(aluno);
         }
     }
 }
