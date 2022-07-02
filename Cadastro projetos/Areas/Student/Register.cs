@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cadastro_projetos.Areas
+namespace Cadastro_projetos.Student
 {
     public partial class Register : UserControl
     {

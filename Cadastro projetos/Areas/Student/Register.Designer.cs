@@ -1,4 +1,4 @@
-﻿namespace Cadastro_projetos.Areas
+﻿namespace Cadastro_projetos.Student
 {
     partial class Register
     {
@@ -28,8 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Register
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.IndianRed;
+            this.Name = "Register";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

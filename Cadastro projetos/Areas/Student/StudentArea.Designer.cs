@@ -1,4 +1,4 @@
-﻿namespace Cadastro_projetos
+﻿namespace Cadastro_projetos.Student
 {
     partial class StudentArea
     {
@@ -32,7 +32,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.RegisterButton = new System.Windows.Forms.Button();
             this.ViewAndEditButton = new System.Windows.Forms.Button();
-            this.Register = new Cadastro_projetos.Areas.Register();
+            this.UserControlStudent = new Cadastro_projetos.Student.SubUserControlStudent();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -42,7 +42,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.Register, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.UserControlStudent, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -81,6 +81,7 @@
             this.RegisterButton.TabIndex = 0;
             this.RegisterButton.Text = "Cadastro";
             this.RegisterButton.UseVisualStyleBackColor = true;
+            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
             // ViewAndEditButton
             // 
@@ -92,14 +93,15 @@
             this.ViewAndEditButton.TabIndex = 2;
             this.ViewAndEditButton.Text = "Visualizar / Edição";
             this.ViewAndEditButton.UseVisualStyleBackColor = true;
+            this.ViewAndEditButton.Click += new System.EventHandler(this.ViewAndEditButton_Click);
             // 
-            // Register
+            // UserControlStudent
             // 
-            this.Register.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Register.Location = new System.Drawing.Point(3, 3);
-            this.Register.Name = "Register";
-            this.Register.Size = new System.Drawing.Size(589, 346);
-            this.Register.TabIndex = 1;
+            this.UserControlStudent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserControlStudent.Location = new System.Drawing.Point(3, 3);
+            this.UserControlStudent.Name = "UserControlStudent";
+            this.UserControlStudent.Size = new System.Drawing.Size(589, 346);
+            this.UserControlStudent.TabIndex = 1;
             // 
             // StudentArea
             // 
@@ -121,6 +123,6 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Button RegisterButton;
         private Button ViewAndEditButton;
-        private Areas.Register Register;
+        private Student.SubUserControlStudent UserControlStudent;
     }
 }

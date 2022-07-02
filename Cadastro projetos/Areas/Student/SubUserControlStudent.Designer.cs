@@ -1,6 +1,6 @@
 ﻿namespace Cadastro_projetos.Student
 {
-    partial class ViewAndEdit
+    partial class SubUserControlStudent
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -28,18 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.Register = new Cadastro_projetos.Student.Register();
+            this.viewAndEdit1 = new Cadastro_projetos.Student.ViewAndEdit();
             this.SuspendLayout();
             // 
-            // ViewAndEdit
+            // Register
+            // 
+            this.Register.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Register.Location = new System.Drawing.Point(0, 0);
+            this.Register.Name = "Register";
+            this.Register.Size = new System.Drawing.Size(589, 346);
+            this.Register.TabIndex = 0;
+            // 
+            // viewAndEdit1
+            // 
+            this.viewAndEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.viewAndEdit1.Location = new System.Drawing.Point(0, 0);
+            this.viewAndEdit1.Name = "viewAndEdit1";
+            this.viewAndEdit1.Size = new System.Drawing.Size(589, 346);
+            this.viewAndEdit1.TabIndex = 1;
+            // 
+            // SubUserControlStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Name = "ViewAndEdit";
+            this.Controls.Add(this.viewAndEdit1);
+            this.Controls.Add(this.Register);
+            this.Name = "SubUserControlStudent";
+            this.Size = new System.Drawing.Size(589, 346);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        public Register Register;
+        public ViewAndEdit viewAndEdit1;
     }
 }

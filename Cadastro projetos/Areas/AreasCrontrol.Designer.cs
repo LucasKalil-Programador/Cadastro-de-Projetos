@@ -1,4 +1,6 @@
-﻿namespace Cadastro_projetos.Window
+﻿using Cadastro_projetos.Student;
+
+namespace Cadastro_projetos.Window
 {
     partial class AreasCrontrol
     {
@@ -30,7 +32,7 @@
         {
             this.AdvisorArea = new Cadastro_projetos.AdvisorArea();
             this.ProjectArea = new Cadastro_projetos.ProjectArea();
-            this.StudentArea = new Cadastro_projetos.StudentArea();
+            this.StudentArea = new Cadastro_projetos.Student.StudentArea();
             this.TeamArea = new Cadastro_projetos.TeamArea();
             this.UniversityArea = new Cadastro_projetos.UniversityArea();
             this.SuspendLayout();
