@@ -97,10 +97,10 @@
 
         #endregion
 
-        private AdvisorArea AdvisorArea;
-        private ProjectArea ProjectArea;
-        private StudentArea StudentArea;
-        private TeamArea TeamArea;
-        private UniversityArea UniversityArea;
+        public AdvisorArea AdvisorArea;
+        public ProjectArea ProjectArea;
+        public StudentArea StudentArea;
+        public TeamArea TeamArea;
+        public UniversityArea UniversityArea;
     }
 }

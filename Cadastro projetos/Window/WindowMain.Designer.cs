@@ -76,6 +76,7 @@
             this.UniversityButton.Text = "Universidade";
             this.UniversityButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.UniversityButton.UseVisualStyleBackColor = true;
+            this.UniversityButton.Click += new System.EventHandler(this.UniversityButton_Click);
             // 
             // AdvisorButton
             // 
@@ -91,6 +92,7 @@
             this.AdvisorButton.Text = "Orientador";
             this.AdvisorButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AdvisorButton.UseVisualStyleBackColor = true;
+            this.AdvisorButton.Click += new System.EventHandler(this.AdvisorButton_Click);
             // 
             // TeamButton
             // 
@@ -107,6 +109,7 @@
             this.TeamButton.Text = "Equipe";
             this.TeamButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TeamButton.UseVisualStyleBackColor = false;
+            this.TeamButton.Click += new System.EventHandler(this.TeamButton_Click);
             // 
             // ProjectButton
             // 
@@ -122,6 +125,7 @@
             this.ProjectButton.Text = "Projeto";
             this.ProjectButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ProjectButton.UseVisualStyleBackColor = true;
+            this.ProjectButton.Click += new System.EventHandler(this.ProjectButton_Click);
             // 
             // StudentButton
             // 
@@ -137,6 +141,7 @@
             this.StudentButton.Text = "Aluno";
             this.StudentButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.StudentButton.UseVisualStyleBackColor = true;
+            this.StudentButton.Click += new System.EventHandler(this.StudentButton_Click);
             // 
             // tableLayoutPanel1
             // 
