@@ -17,6 +17,7 @@ namespace Cadastro_projetos.Student
         public Register()
         {
             InitializeComponent();
+            pictureBox.Visible = false;
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
@@ -25,8 +26,69 @@ namespace Cadastro_projetos.Student
             string semester = SemesterNumeric.Text;
             string registerNumber = RegisterNumberTextBox.Text;
 
+            pictureBox.Visible = true;
+
+            if (ValidationData(name, semester, registerNumber))
+            {
+                InsertOnDB(name, semester, registerNumber);
+            }
+            else
+            {
+
+                return;
+            }
+        }
+
+        private bool ValidationData(string name, string semester, string registerNumber)
+        {
+            bool nameIsValid = name != "";
+            bool registerNumberIsValid = registerNumber != "";
+            ErrorOrSucessesLabel.Text = "";
+
+            if(!nameIsValid || !registerNumberIsValid)
+            {
+                this.pictureBox.Image = Properties.Resources.error;
+            }
+
+            if (!nameIsValid && !registerNumberIsValid)
+                ErrorOrSucessesLabel.Text = "O nome e matricula invalidos";
+            else if (!nameIsValid)
+                ErrorOrSucessesLabel.Text = "O nome esta invalido";
+            else if (!registerNumberIsValid)
+                ErrorOrSucessesLabel.Text = "A matricula esta invalida";
+
+            if (!nameIsValid)
+                NameTextBox.BackColor = Color.Red;
+            else
+                NameTextBox.BackColor = Color.White;
+
+            if (!registerNumberIsValid)
+                RegisterNumberTextBox.BackColor = Color.Red;
+            else
+                RegisterNumberTextBox.BackColor = Color.White;
+
+            return nameIsValid && registerNumberIsValid;
+        }
+
+        private void InsertOnDB(string name, string semester, string registerNumber)
+        {
             Aluno aluno = new Aluno(String.Empty, name, registerNumber, semester);
-            Connection.InsertAluno(aluno);
+            bool result = Connection.InsertAluno(aluno);
+            Console.WriteLine(result);
+            if (result)
+            {
+                this.pictureBox.Image = Properties.Resources.sucesses;
+                ErrorOrSucessesLabel.Text = "Cadastro realizado com sucesso!";
+
+                NameTextBox.Clear();
+                SemesterNumeric.Value = 1;
+                RegisterNumberTextBox.Clear();
+            }
+            else
+            {
+                this.pictureBox.Image = Properties.Resources.error;
+                ErrorOrSucessesLabel.Text = "Error desconhecido";
+            }
         }
     }
 }

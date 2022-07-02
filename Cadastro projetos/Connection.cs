@@ -21,14 +21,36 @@ namespace Cadastro_projetos.SQLConnection
             return connection;
         }
         
-        public static void InsertAluno(Aluno aluno)
+        public static bool InsertAluno(Aluno aluno)
         {
             lock (connection)
             {
                 MySqlCommand cmd = new MySqlCommand("INSERT INTO Aluno(nome,semestre,matricula) values " +
                     $"('{aluno.Name}',{aluno.Semester},'{aluno.RegisterNumber}');", connection);
-                cmd.ExecuteNonQuery();
+                return cmd.ExecuteNonQuery() != -1;
             }
+        }
+
+        public static Aluno[] SelectAllFromAluno()
+        {
+            List<Aluno> alunoList = new List<Aluno>();
+            lock (connection)
+            {
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM Aluno", connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    Aluno aluno = new Aluno(
+                        dataReader.GetString(0), 
+                        dataReader.GetString(1),
+                        dataReader.GetString(2),
+                        dataReader.GetString(3));
+                    alunoList.Add(aluno);
+                }
+              
+                dataReader.Close();
+            }
+            return alunoList.ToArray();
         }
     }
 }
