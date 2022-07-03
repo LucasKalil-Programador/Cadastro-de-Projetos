@@ -17,10 +17,12 @@ namespace Cadastro_projetos.SQLConnection
         private static MySqlConnection GetConnectionInternal()
         {
             MySqlConnection connection = new MySqlConnection(ConnectionString);
-             connection.Open();
+            connection.Open();
             return connection;
         }
-        
+
+        // sql querys Aluno
+
         public static bool InsertAluno(Aluno aluno)
         {
             lock (connection)
@@ -41,13 +43,13 @@ namespace Cadastro_projetos.SQLConnection
                 while (dataReader.Read())
                 {
                     Aluno aluno = new Aluno(
-                        dataReader.GetString(0), 
+                        dataReader.GetString(0),
                         dataReader.GetString(1),
                         dataReader.GetString(2),
                         dataReader.GetString(3));
                     alunoList.Add(aluno);
                 }
-              
+
                 dataReader.Close();
             }
             return alunoList.ToArray();
@@ -55,13 +57,33 @@ namespace Cadastro_projetos.SQLConnection
 
         public static int CountFromAluno()
         {
-            MySqlCommand cmd = new MySqlCommand($"SELECT COUNT(*) FROM Aluno;", connection);
-            MySqlDataReader dataReader = cmd.ExecuteReader();
-            int count = 0;
-            if (dataReader.Read()) 
-                count = dataReader.GetInt32(0);
-            dataReader.Close();
-            return count;
+            lock (connection)
+            {
+                MySqlCommand cmd = new MySqlCommand($"SELECT COUNT(*) FROM Aluno;", connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                int count = 0;
+                if (dataReader.Read())
+                    count = dataReader.GetInt32(0);
+                dataReader.Close();
+                return count;
+            }
+        }
+
+        public static bool UpdateAluno(Aluno aluno)
+        {
+            lock (connection)
+            {
+                MySqlCommand cmd = new MySqlCommand($"UPDATE Aluno SET " +
+                    $"nome = '{aluno.Name}', semestre = {aluno.Semester}, " +
+                    $"matricula = '{aluno.RegisterNumber}' where idAluno = {aluno.id};", connection);
+                return cmd.ExecuteNonQuery() != -1;
+            }
+        }
+
+        public static bool DeleteAluno(Aluno aluno)
+        {
+            MySqlCommand cmd = new MySqlCommand($"DELETE FROM Aluno WHERE idAluno = {aluno.id};", connection);
+            return cmd.ExecuteNonQuery() != -1;
         }
     }
 }
