@@ -98,21 +98,21 @@ namespace Cadastro_projetos.Student
 
                 pictureBox.Visible = true;
 
-                if (ValidationData(name, semester, registerNumber))
+                if (ValidationData(name, registerNumber))
                     UpdateDB(id, name, semester, registerNumber);
                 else
                     return;
             }
         }
 
-        private bool ValidationData(string name, string semester, string registerNumber)
+        private bool ValidationData(string name, string registerNumber)
         {
             bool nameIsValid = Regex.IsMatch(name, "([A-Za-z]| )+");
             bool registerNumberIsValid = Regex.IsMatch(registerNumber, "[0-9]{10}");
             ErrorAndSucessesLabel.Text = "";
 
             if (!nameIsValid || !registerNumberIsValid)
-                this.pictureBox.Image = Properties.Resources.error;
+                this.pictureBox.BackgroundImage = Properties.Resources.error;
 
             if (!nameIsValid && !registerNumberIsValid)
                 ErrorAndSucessesLabel.Text = "O nome e matricula invalidos";

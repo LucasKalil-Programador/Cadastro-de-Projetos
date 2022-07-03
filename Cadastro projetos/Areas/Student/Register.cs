@@ -42,7 +42,7 @@ namespace Cadastro_projetos.Student
             ErrorOrSucessesLabel.Text = "";
 
             if (!nameIsValid || !registerNumberIsValid)
-                this.pictureBox.Image = Properties.Resources.error;
+                this.pictureBox.BackgroundImage = Properties.Resources.error;
 
             if (!nameIsValid && !registerNumberIsValid)
                 ErrorOrSucessesLabel.Text = "O nome e matricula invalidos";
@@ -63,7 +63,7 @@ namespace Cadastro_projetos.Student
             bool result = Connection.InsertAluno(aluno);
             if (result)
             {
-                this.pictureBox.Image = Properties.Resources.sucesses;
+                this.pictureBox.BackgroundImage = Properties.Resources.sucesses;
                 ErrorOrSucessesLabel.Text = "Cadastro realizado com sucesso!";
 
                 NameTextBox.Clear();
@@ -72,7 +72,7 @@ namespace Cadastro_projetos.Student
             }
             else
             {
-                this.pictureBox.Image = Properties.Resources.error;
+                this.pictureBox.BackgroundImage = Properties.Resources.error;
                 ErrorOrSucessesLabel.Text = "Error desconhecido";
             }
         }
