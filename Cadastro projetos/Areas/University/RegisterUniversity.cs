@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Cadastro_projetos.University
 {
-    public partial class SubUserControlUniversity : UserControl
+    public partial class RegisterUniversity : UserControl
     {
-        public SubUserControlUniversity()
+        public RegisterUniversity()
         {
             InitializeComponent();
         }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Register = new Cadastro_projetos.Student.Register();
-            this.viewAndEdit1 = new Cadastro_projetos.Student.ViewAndEdit();
+            this.Register = new Cadastro_projetos.Student.RegisterStudant();
+            this.viewAndEdit1 = new Cadastro_projetos.Student.ViewAndEditStudant();
             this.SuspendLayout();
             // 
             // Register
@@ -62,7 +62,7 @@
 
         #endregion
 
-        public Register Register;
-        public ViewAndEdit viewAndEdit1;
+        public RegisterStudant Register;
+        public ViewAndEditStudant viewAndEdit1;
     }
 }

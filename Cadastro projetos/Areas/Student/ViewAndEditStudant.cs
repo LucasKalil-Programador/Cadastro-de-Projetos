@@ -13,13 +13,13 @@ using System.Text.RegularExpressions;
 
 namespace Cadastro_projetos.Student
 {
-    public partial class ViewAndEdit : UserControl
+    public partial class ViewAndEditStudant : UserControl
     {
         private const int LIMIT = 10;
 
         private DataGridViewCellCollection? ActualRow;
 
-        public ViewAndEdit()
+        public ViewAndEditStudant()
         {
             InitializeComponent();
             pictureBox.Visible = false;

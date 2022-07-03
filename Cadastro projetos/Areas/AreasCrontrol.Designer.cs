@@ -1,4 +1,5 @@
 ﻿using Cadastro_projetos.Student;
+using Cadastro_projetos.University;
 
 namespace Cadastro_projetos.Window
 {
@@ -34,7 +35,7 @@ namespace Cadastro_projetos.Window
             this.ProjectArea = new Cadastro_projetos.ProjectArea();
             this.StudentArea = new Cadastro_projetos.Student.StudentArea();
             this.TeamArea = new Cadastro_projetos.TeamArea();
-            this.UniversityArea = new Cadastro_projetos.UniversityArea();
+            this.UniversityArea = new Cadastro_projetos.University.UniversityArea();
             this.SuspendLayout();
             // 
             // AdvisorArea
@@ -48,7 +49,7 @@ namespace Cadastro_projetos.Window
             // 
             // ProjectArea
             // 
-            this.ProjectArea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.ProjectArea.BackColor = System.Drawing.Color.Silver;
             this.ProjectArea.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProjectArea.Location = new System.Drawing.Point(0, 0);
             this.ProjectArea.Name = "ProjectArea";
@@ -75,7 +76,7 @@ namespace Cadastro_projetos.Window
             // 
             // UniversityArea
             // 
-            this.UniversityArea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.UniversityArea.BackColor = System.Drawing.Color.Silver;
             this.UniversityArea.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UniversityArea.Location = new System.Drawing.Point(0, 0);
             this.UniversityArea.Name = "UniversityArea";
@@ -86,11 +87,11 @@ namespace Cadastro_projetos.Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.UniversityArea);
             this.Controls.Add(this.StudentArea);
             this.Controls.Add(this.TeamArea);
             this.Controls.Add(this.AdvisorArea);
             this.Controls.Add(this.ProjectArea);
-            this.Controls.Add(this.UniversityArea);
             this.Name = "AreasCrontrol";
             this.Size = new System.Drawing.Size(561, 415);
             this.ResumeLayout(false);

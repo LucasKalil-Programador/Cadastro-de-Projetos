@@ -1,6 +1,6 @@
 ﻿namespace Cadastro_projetos.Student
 {
-    partial class Register
+    partial class RegisterStudant
     {
         /// <summary> 
         /// Variável de designer necessária.

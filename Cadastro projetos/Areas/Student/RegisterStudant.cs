@@ -13,9 +13,9 @@ using System.Text.RegularExpressions;
 
 namespace Cadastro_projetos.Student
 {
-    public partial class Register : UserControl
+    public partial class RegisterStudant : UserControl
     {
-        public Register()
+        public RegisterStudant()
         {
             InitializeComponent();
             pictureBox.Visible = false;

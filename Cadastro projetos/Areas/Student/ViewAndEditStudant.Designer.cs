@@ -1,6 +1,6 @@
 ﻿namespace Cadastro_projetos.Student
 {
-    partial class ViewAndEdit
+    partial class ViewAndEditStudant
     {
         /// <summary> 
         /// Variável de designer necessária.
