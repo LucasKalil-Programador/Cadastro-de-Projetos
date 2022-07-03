@@ -24,11 +24,10 @@ namespace Cadastro_projetos.Advisor
         private void RegisterButton_Click(object sender, EventArgs e)
         {
             string nome = NameTextBox.Text;
-            string subjects = String.Empty;
 
             bool valid = ValidSujects() & ValidName(nome);
 
-            subjects = GetSubjets();
+            string subjects = GetSubjets();
             if (valid) InsertOnDB(nome, subjects);
         }
 
@@ -58,7 +57,7 @@ namespace Cadastro_projetos.Advisor
             for (int i = 0; i < SubjectsTable.RowCount - 1; i++)
             {
                 if (i > 0) subjets += ",";
-                subjets += SubjectsTable.Rows[i].Cells[0].Value;
+                subjets += ((string)SubjectsTable.Rows[i].Cells[0].Value).Trim();
             }
             return subjets;
         }
@@ -87,7 +86,7 @@ namespace Cadastro_projetos.Advisor
             {
                 if (SubjectsTable.Rows[i].Cells[0].Value != null && Regex.IsMatch((string)SubjectsTable.Rows[i].Cells[0].Value, "[a-zA-Z]([a-zA-Z]| )*"))
                 {
-                    if (((string)SubjectsTable.Rows[i].Cells[0].Value).Contains(","))
+                    if (((string)SubjectsTable.Rows[i].Cells[0].Value).Contains(','))
                     {
                         SubjectsTable.Rows[i].DefaultCellStyle.BackColor = Color.Red;
                         error = true;
