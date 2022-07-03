@@ -172,9 +172,9 @@
             // 
             // pictureBox
             // 
+            this.pictureBox.BackgroundImage = global::Cadastro_projetos.Properties.Resources.sucesses;
             this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox.Image = global::Cadastro_projetos.Properties.Resources.sucesses;
             this.pictureBox.Location = new System.Drawing.Point(212, 0);
             this.pictureBox.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox.Name = "pictureBox";

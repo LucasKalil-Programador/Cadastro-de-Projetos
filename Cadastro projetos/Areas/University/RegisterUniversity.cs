@@ -39,6 +39,7 @@ namespace Cadastro_projetos.University
 
             if (!nameIsValid)
             {
+                Console.WriteLine("a");
                 ErrorOrSucessesLabel.Text = "O nome é invalido";
                 pictureBox.BackgroundImage = Properties.Resources.error;
             }

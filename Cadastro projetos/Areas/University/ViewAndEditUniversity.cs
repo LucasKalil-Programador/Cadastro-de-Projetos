@@ -155,7 +155,7 @@ namespace Cadastro_projetos.University
             NameTextBox.Clear();
 
             int index = int.Parse(PageCountLabel.Text.Split(" / ")[0]);
-            int count = Connection.CountFromAluno();
+            int count = Connection.CountFromUniversidade();
 
             if (index < count) UpdateDataGrid(index * LIMIT);
             PageCountLabel.Text = $"{index} / {count / LIMIT}";
