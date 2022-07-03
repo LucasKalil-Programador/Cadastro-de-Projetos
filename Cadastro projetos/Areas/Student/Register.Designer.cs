@@ -233,11 +233,12 @@
             // 
             this.ErrorOrSucessesLabel.AutoSize = true;
             this.ErrorOrSucessesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ErrorOrSucessesLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ErrorOrSucessesLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ErrorOrSucessesLabel.Location = new System.Drawing.Point(3, 0);
             this.ErrorOrSucessesLabel.Name = "ErrorOrSucessesLabel";
             this.ErrorOrSucessesLabel.Size = new System.Drawing.Size(210, 70);
             this.ErrorOrSucessesLabel.TabIndex = 0;
+            this.ErrorOrSucessesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox
             // 

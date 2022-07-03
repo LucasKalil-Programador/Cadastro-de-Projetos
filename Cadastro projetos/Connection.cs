@@ -31,12 +31,12 @@ namespace Cadastro_projetos.SQLConnection
             }
         }
 
-        public static Aluno[] SelectAllFromAluno()
+        public static Aluno[] SelectFromAluno(int index, int limit)
         {
             List<Aluno> alunoList = new List<Aluno>();
             lock (connection)
             {
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM Aluno", connection);
+                MySqlCommand cmd = new MySqlCommand($"SELECT * FROM Aluno LIMIT {index}, {limit};", connection);
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
@@ -51,6 +51,17 @@ namespace Cadastro_projetos.SQLConnection
                 dataReader.Close();
             }
             return alunoList.ToArray();
+        }
+
+        public static int CountFromAluno()
+        {
+            MySqlCommand cmd = new MySqlCommand($"SELECT COUNT(*) FROM Aluno;", connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            int count = 0;
+            if (dataReader.Read()) 
+                count = dataReader.GetInt32(0);
+            dataReader.Close();
+            return count;
         }
     }
 }

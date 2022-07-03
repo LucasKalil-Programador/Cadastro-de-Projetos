@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Cadastro_projetos.Entities;
 using Cadastro_projetos.SQLConnection;
+using System.Text.RegularExpressions;
 
 namespace Cadastro_projetos.Student
 {
@@ -36,8 +37,8 @@ namespace Cadastro_projetos.Student
 
         private bool ValidationData(string name, string semester, string registerNumber)
         {
-            bool nameIsValid = name != "";
-            bool registerNumberIsValid = registerNumber != "";
+            bool nameIsValid = Regex.IsMatch(name, "([A-Za-z]| )+");
+            bool registerNumberIsValid =  Regex.IsMatch(registerNumber, "[0-9]{10}");
             ErrorOrSucessesLabel.Text = "";
 
             if (!nameIsValid || !registerNumberIsValid)
@@ -60,7 +61,6 @@ namespace Cadastro_projetos.Student
         {
             Aluno aluno = new Aluno(String.Empty, name, registerNumber, semester);
             bool result = Connection.InsertAluno(aluno);
-            Console.WriteLine(result);
             if (result)
             {
                 this.pictureBox.Image = Properties.Resources.sucesses;
