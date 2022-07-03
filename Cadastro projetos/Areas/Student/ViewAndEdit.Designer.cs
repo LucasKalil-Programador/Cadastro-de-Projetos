@@ -32,7 +32,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.TableAluno = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Semester = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RegisterNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -46,14 +46,14 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.66667F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.33333F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(589, 346);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -64,13 +64,13 @@
             this.tableLayoutPanel2.Controls.Add(this.TableAluno, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(294, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(245, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.99422F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.00578F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(295, 346);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(344, 346);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // TableAluno
@@ -78,16 +78,16 @@
             this.TableAluno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TableAluno.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.Name,
+            this.NameA,
             this.Semester,
             this.RegisterNumber});
             this.TableAluno.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TableAluno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TableAluno.Location = new System.Drawing.Point(3, 3);
             this.TableAluno.Name = "TableAluno";
             this.TableAluno.RowTemplate.Height = 25;
-            this.TableAluno.Size = new System.Drawing.Size(289, 295);
+            this.TableAluno.Size = new System.Drawing.Size(338, 295);
             this.TableAluno.TabIndex = 0;
-            this.TableAluno.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             // 
             // Id
             // 
@@ -95,15 +95,15 @@
             this.Id.HeaderText = "ID";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            this.Id.Width = 43;
+            this.Id.Width = 50;
             // 
             // Name
             // 
-            this.Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Name.HeaderText = "Nome";
-            this.Name.Name = "Name";
-            this.Name.ReadOnly = true;
-            this.Name.Width = 65;
+            this.NameA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.NameA.HeaderText = "Nome";
+            this.NameA.Name = "Name";
+            this.NameA.ReadOnly = true;
+            this.NameA.Width = 78;
             // 
             // Semester
             // 
@@ -111,7 +111,6 @@
             this.Semester.HeaderText = "Semestre";
             this.Semester.Name = "Semester";
             this.Semester.ReadOnly = true;
-            this.Semester.Width = 80;
             // 
             // RegisterNumber
             // 
@@ -119,7 +118,6 @@
             this.RegisterNumber.HeaderText = "Matricula";
             this.RegisterNumber.Name = "RegisterNumber";
             this.RegisterNumber.ReadOnly = true;
-            this.RegisterNumber.Width = 82;
             // 
             // tableLayoutPanel3
             // 
@@ -133,16 +131,16 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(289, 39);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(338, 39);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // UpdateButton
             // 
             this.UpdateButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UpdateButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.UpdateButton.Location = new System.Drawing.Point(60, 3);
+            this.UpdateButton.Location = new System.Drawing.Point(70, 3);
             this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Size = new System.Drawing.Size(167, 33);
+            this.UpdateButton.Size = new System.Drawing.Size(196, 33);
             this.UpdateButton.TabIndex = 0;
             this.UpdateButton.Text = "Atualizar";
             this.UpdateButton.UseVisualStyleBackColor = true;
@@ -169,7 +167,7 @@
         private TableLayoutPanel tableLayoutPanel2;
         private DataGridView TableAluno;
         private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn Name;
+        private DataGridViewTextBoxColumn NameA;
         private DataGridViewTextBoxColumn Semester;
         private DataGridViewTextBoxColumn RegisterNumber;
         private TableLayoutPanel tableLayoutPanel3;

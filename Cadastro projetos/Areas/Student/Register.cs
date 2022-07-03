@@ -29,14 +29,9 @@ namespace Cadastro_projetos.Student
             pictureBox.Visible = true;
 
             if (ValidationData(name, semester, registerNumber))
-            {
                 InsertOnDB(name, semester, registerNumber);
-            }
             else
-            {
-
                 return;
-            }
         }
 
         private bool ValidationData(string name, string semester, string registerNumber)
@@ -45,10 +40,8 @@ namespace Cadastro_projetos.Student
             bool registerNumberIsValid = registerNumber != "";
             ErrorOrSucessesLabel.Text = "";
 
-            if(!nameIsValid || !registerNumberIsValid)
-            {
+            if (!nameIsValid || !registerNumberIsValid)
                 this.pictureBox.Image = Properties.Resources.error;
-            }
 
             if (!nameIsValid && !registerNumberIsValid)
                 ErrorOrSucessesLabel.Text = "O nome e matricula invalidos";
@@ -57,15 +50,8 @@ namespace Cadastro_projetos.Student
             else if (!registerNumberIsValid)
                 ErrorOrSucessesLabel.Text = "A matricula esta invalida";
 
-            if (!nameIsValid)
-                NameTextBox.BackColor = Color.Red;
-            else
-                NameTextBox.BackColor = Color.White;
-
-            if (!registerNumberIsValid)
-                RegisterNumberTextBox.BackColor = Color.Red;
-            else
-                RegisterNumberTextBox.BackColor = Color.White;
+            NameTextBox.BackColor = nameIsValid ? Color.White : Color.Red;
+            RegisterNumberTextBox.BackColor = registerNumberIsValid ? Color.White : Color.Red;
 
             return nameIsValid && registerNumberIsValid;
         }
