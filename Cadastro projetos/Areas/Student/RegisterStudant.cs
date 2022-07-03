@@ -37,7 +37,7 @@ namespace Cadastro_projetos.Student
 
         private bool ValidationData(string name, string registerNumber)
         {
-            bool nameIsValid = Regex.IsMatch(name, "([A-Za-z]| )+");
+            bool nameIsValid = Regex.IsMatch(name, "([A-Za-z]| ){1,120}");
             bool registerNumberIsValid =  Regex.IsMatch(registerNumber, "[0-9]{10}");
             ErrorOrSucessesLabel.Text = "";
 

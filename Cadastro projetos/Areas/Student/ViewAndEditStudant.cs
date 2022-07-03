@@ -32,7 +32,7 @@ namespace Cadastro_projetos.Student
             if (!Visible)
             {
                 UpdateDataGrid(0);
-                PageCountLabel.Text = $"0 / {Connection.CountFromAluno() / 10}";
+                PageCountLabel.Text = $"0 / {Connection.CountFromAluno() / LIMIT}";
                 ErrorAndSucessesLabel.Text = "Aluno ainda não selecionado";
 
                 SemesterNumeric.Value = 1;
@@ -48,8 +48,8 @@ namespace Cadastro_projetos.Student
             int index = int.Parse(PageCountLabel.Text.Split(" / ")[0]);
             int count = Connection.CountFromAluno();
 
-            if (index < count) UpdateDataGrid(++index * 10);
-            PageCountLabel.Text = $"{index} / {count / 10}";
+            if (index < count / LIMIT) UpdateDataGrid(++index * LIMIT);
+            PageCountLabel.Text = $"{index} / {count / LIMIT}";
         }
 
         // Prev Button
@@ -59,8 +59,8 @@ namespace Cadastro_projetos.Student
             int index = int.Parse(PageCountLabel.Text.Split(" / ")[0]);
             int count = Connection.CountFromAluno();
 
-            if (index > 0) UpdateDataGrid(--index * 10);
-            PageCountLabel.Text = $"{index} / {count / 10}";
+            if (index > 0) UpdateDataGrid(--index * LIMIT);
+            PageCountLabel.Text = $"{index} / {count / LIMIT}";
         }
 
         private void UpdateDataGrid(int index)
@@ -68,13 +68,16 @@ namespace Cadastro_projetos.Student
             Aluno[] alunos = Connection.SelectFromAluno(index, LIMIT);
             TableAluno.Rows.Clear();
             for (int i = 0; i < alunos.Length; i++)
-                TableAluno.Rows.Add(alunos[i].id, alunos[i].Name, alunos[i].RegisterNumber, alunos[i].Semester);
+                TableAluno.Rows.Add(alunos[i].Id, alunos[i].Name, alunos[i].RegisterNumber, alunos[i].Semester);
         }
 
         private void On_RowClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            ActualRow = TableAluno.Rows[e.RowIndex].Cells;
-            SetTextAreas(ActualRow);
+            if (TableAluno.Rows[e.RowIndex].Cells[0].Value != null)
+            {
+                ActualRow = TableAluno.Rows[e.RowIndex].Cells;
+                SetTextAreas(ActualRow);
+            }
         }
 
         private void SetTextAreas(DataGridViewCellCollection Row)
@@ -107,7 +110,7 @@ namespace Cadastro_projetos.Student
 
         private bool ValidationData(string name, string registerNumber)
         {
-            bool nameIsValid = Regex.IsMatch(name, "([A-Za-z]| )+");
+            bool nameIsValid = Regex.IsMatch(name, "([A-Za-z]| ){1,120}");
             bool registerNumberIsValid = Regex.IsMatch(registerNumber, "[0-9]{10}");
             ErrorAndSucessesLabel.Text = "";
 
@@ -134,7 +137,7 @@ namespace Cadastro_projetos.Student
             if (result)
             {
                 this.pictureBox.BackgroundImage = Properties.Resources.sucesses;
-                ErrorAndSucessesLabel.Text = "Cadastro realizado com sucesso!";
+                ErrorAndSucessesLabel.Text = "Atualização realizado com sucesso!";
                 ResetAll();
             }
             else
@@ -148,8 +151,7 @@ namespace Cadastro_projetos.Student
 
         private void RefreshButton_Click(object sender, EventArgs e)
         {
-            if (ActualRow != null)
-                SetTextAreas(ActualRow);
+            if (ActualRow != null) SetTextAreas(ActualRow);
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
@@ -170,8 +172,8 @@ namespace Cadastro_projetos.Student
             int index = int.Parse(PageCountLabel.Text.Split(" / ")[0]);
             int count = Connection.CountFromAluno();
 
-            if (index < count) UpdateDataGrid(index * 10);
-            PageCountLabel.Text = $"{index} / {count / 10}";
+            if (index < count) UpdateDataGrid(index * LIMIT);
+            PageCountLabel.Text = $"{index} / {count / LIMIT}";
 
             ActualRow = null;
         }

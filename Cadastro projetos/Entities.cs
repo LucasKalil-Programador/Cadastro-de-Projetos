@@ -8,7 +8,7 @@ namespace Cadastro_projetos.Entities
 {
     public class Aluno
     {
-        public string id { get; set; }
+        public string Id { get; set; }
 
         public string Name { get; set; }
 
@@ -18,10 +18,23 @@ namespace Cadastro_projetos.Entities
 
         public Aluno(string id, string name, string registerNumber, string semester)
         {
-            this.id = id;
+            this.Id = id;
             this.Name = name;
             this.RegisterNumber = registerNumber; 
             this.Semester = semester;   
+        }
+    }
+
+    public class Universidade
+    {
+        public string Id { get; set; }
+
+        public string Name { get; set; }
+
+        public Universidade(string id, string name)
+        {
+            this.Id = id;
+            this.Name = name;
         }
     }
 }

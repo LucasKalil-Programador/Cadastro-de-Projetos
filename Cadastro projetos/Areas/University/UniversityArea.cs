@@ -34,6 +34,7 @@ namespace Cadastro_projetos.University
             ViewAndEditButton.BackColor = SystemColors.ActiveCaption;
             RegisterButton.BackColor = SystemColors.ControlLight;
 
+            subUserControlUniversity1.ViewAndEdit.On_ChangeForThis();
             subUserControlUniversity1.ViewAndEdit.Enabled = true;
             subUserControlUniversity1.ViewAndEdit.Visible = true;
             subUserControlUniversity1.Register.Enabled = false;
