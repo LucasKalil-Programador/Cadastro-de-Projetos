@@ -37,4 +37,20 @@ namespace Cadastro_projetos.Entities
             this.Name = name;
         }
     }
+
+    public class Orientador
+    {
+        public string Id { get; set; }
+
+        public string Name { get; set; }
+
+        public string Subjects { get; set; }
+
+        public Orientador(string id, string name, string subjects)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.Subjects = subjects;
+        }
+    }
 }

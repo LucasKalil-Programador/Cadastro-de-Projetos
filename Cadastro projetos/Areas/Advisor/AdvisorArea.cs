@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cadastro_projetos
+namespace Cadastro_projetos.Advisor
 {
     public partial class AdvisorArea : UserControl
     {

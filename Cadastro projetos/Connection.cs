@@ -21,6 +21,7 @@ namespace Cadastro_projetos.SQLConnection
             return connection;
         }
 
+        #region Aluno
         // sql querys Aluno
 
         public static bool InsertAluno(Aluno aluno)
@@ -88,6 +89,10 @@ namespace Cadastro_projetos.SQLConnection
             }
         }
 
+        #endregion Aluno
+
+        #region Universidade
+
         // sql querys Universidade
 
         public static bool InsertUniversidade(Universidade universidade)
@@ -150,5 +155,74 @@ namespace Cadastro_projetos.SQLConnection
                 return cmd.ExecuteNonQuery() != -1;
             }
         }
+
+        #endregion Universidade
+
+        #region Orientador
+
+        public static bool InsertOrientador(Orientador orientador)
+        {
+            lock (connection)
+            {
+                MySqlCommand cmd = new("INSERT INTO Aluno(nome,materias) values " +
+                    $"('{orientador.Name}', '{orientador.Subjects}');", connection);
+                return cmd.ExecuteNonQuery() != -1;
+            }
+        }
+
+        public static Orientador[] SelectFromOrientador(int index, int limit)
+        {
+            List<Orientador> alunoList = new();
+            lock (connection)
+            {
+                MySqlCommand cmd = new($"SELECT * FROM Orientador LIMIT {index}, {limit};", connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    Orientador orientador = new(
+                        dataReader.GetString(0),
+                        dataReader.GetString(1),
+                        dataReader.GetString(2));
+                    alunoList.Add(orientador);
+                }
+
+                dataReader.Close();
+            }
+            return alunoList.ToArray();
+        }
+
+        public static int CountFromOrientador()
+        {
+            lock (connection)
+            {
+                MySqlCommand cmd = new($"SELECT COUNT(*) FROM Orientador;", connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                int count = 0;
+                if (dataReader.Read()) count = dataReader.GetInt32(0);
+                dataReader.Close();
+                return count;
+            }
+        }
+
+        public static bool UpdateOrientador(Orientador orientador)
+        {
+            lock (connection)
+            {
+                MySqlCommand cmd = new("UPDATE Orientador SET " +
+                    $"Nome = '{orientador.Name}', Materias = '{orientador.Subjects}';", connection);
+                return cmd.ExecuteNonQuery() != -1;
+            }
+        }
+
+        public static bool DeleteOrientador(Orientador orientador)
+        {
+            lock (connection)
+            {
+                MySqlCommand cmd = new($"DELETE FROM Orientador WHERE idOrientador = {orientador.Id};", connection);
+                return cmd.ExecuteNonQuery() != -1;
+            }
+        }
+
+        #endregion Orientador
     }
 }

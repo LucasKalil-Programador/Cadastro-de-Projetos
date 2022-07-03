@@ -1,4 +1,4 @@
-﻿namespace Cadastro_projetos
+﻿namespace Cadastro_projetos.Advisor
 {
     partial class AdvisorArea
     {
