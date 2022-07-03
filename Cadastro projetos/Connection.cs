@@ -11,12 +11,12 @@ namespace Cadastro_projetos.SQLConnection
     internal class Connection
     {
 
-        private static string ConnectionString = "server=localhost;database=cadastro_projeto_db;uid=root;pwd=admin;";
-        private static MySqlConnection connection = GetConnectionInternal();
+        public const string ConnectionString = "server=localhost;database=cadastro_projeto_db;uid=root;pwd=admin;";
+        private static readonly MySqlConnection connection = GetConnectionInternal();
 
         private static MySqlConnection GetConnectionInternal()
         {
-            MySqlConnection connection = new MySqlConnection(ConnectionString);
+            MySqlConnection connection = new (ConnectionString);
             connection.Open();
             return connection;
         }
@@ -27,7 +27,7 @@ namespace Cadastro_projetos.SQLConnection
         {
             lock (connection)
             {
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO Aluno(nome,semestre,matricula) values " +
+                MySqlCommand cmd = new ("INSERT INTO Aluno(nome,semestre,matricula) values " +
                     $"('{aluno.Name}',{aluno.Semester},'{aluno.RegisterNumber}');", connection);
                 return cmd.ExecuteNonQuery() != -1;
             }
@@ -35,14 +35,14 @@ namespace Cadastro_projetos.SQLConnection
 
         public static Aluno[] SelectFromAluno(int index, int limit)
         {
-            List<Aluno> alunoList = new List<Aluno>();
+            List<Aluno> alunoList = new();
             lock (connection)
             {
-                MySqlCommand cmd = new MySqlCommand($"SELECT * FROM Aluno LIMIT {index}, {limit};", connection);
+                MySqlCommand cmd = new ($"SELECT * FROM Aluno LIMIT {index}, {limit};", connection);
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    Aluno aluno = new Aluno(
+                    Aluno aluno = new (
                         dataReader.GetString(0),
                         dataReader.GetString(1),
                         dataReader.GetString(2),
@@ -59,7 +59,7 @@ namespace Cadastro_projetos.SQLConnection
         {
             lock (connection)
             {
-                MySqlCommand cmd = new MySqlCommand($"SELECT COUNT(*) FROM Aluno;", connection);
+                MySqlCommand cmd = new ($"SELECT COUNT(*) FROM Aluno;", connection);
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 int count = 0;
                 if (dataReader.Read())
@@ -73,7 +73,7 @@ namespace Cadastro_projetos.SQLConnection
         {
             lock (connection)
             {
-                MySqlCommand cmd = new MySqlCommand($"UPDATE Aluno SET " +
+                MySqlCommand cmd = new ($"UPDATE Aluno SET " +
                     $"nome = '{aluno.Name}', semestre = {aluno.Semester}, " +
                     $"matricula = '{aluno.RegisterNumber}' where idAluno = {aluno.id};", connection);
                 return cmd.ExecuteNonQuery() != -1;
@@ -82,7 +82,7 @@ namespace Cadastro_projetos.SQLConnection
 
         public static bool DeleteAluno(Aluno aluno)
         {
-            MySqlCommand cmd = new MySqlCommand($"DELETE FROM Aluno WHERE idAluno = {aluno.id};", connection);
+            MySqlCommand cmd = new ($"DELETE FROM Aluno WHERE idAluno = {aluno.id};", connection);
             return cmd.ExecuteNonQuery() != -1;
         }
     }

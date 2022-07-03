@@ -29,13 +29,13 @@ namespace Cadastro_projetos.Student
 
             pictureBox.Visible = true;
 
-            if (ValidationData(name, semester, registerNumber))
+            if (ValidationData(name, registerNumber))
                 InsertOnDB(name, semester, registerNumber);
             else
                 return;
         }
 
-        private bool ValidationData(string name, string semester, string registerNumber)
+        private bool ValidationData(string name, string registerNumber)
         {
             bool nameIsValid = Regex.IsMatch(name, "([A-Za-z]| )+");
             bool registerNumberIsValid =  Regex.IsMatch(registerNumber, "[0-9]{10}");
@@ -59,7 +59,7 @@ namespace Cadastro_projetos.Student
 
         private void InsertOnDB(string name, string semester, string registerNumber)
         {
-            Aluno aluno = new Aluno(String.Empty, name, registerNumber, semester);
+            Aluno aluno = new (String.Empty, name, registerNumber, semester);
             bool result = Connection.InsertAluno(aluno);
             if (result)
             {

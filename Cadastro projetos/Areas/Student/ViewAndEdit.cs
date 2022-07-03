@@ -129,7 +129,7 @@ namespace Cadastro_projetos.Student
 
         private void UpdateDB(string id, string name, string semester, string registerNumber)
         {
-            Aluno aluno = new Aluno(id, name, registerNumber, semester);
+            Aluno aluno = new (id, name, registerNumber, semester);
             bool result = Connection.UpdateAluno(aluno);
             if (result)
             {
