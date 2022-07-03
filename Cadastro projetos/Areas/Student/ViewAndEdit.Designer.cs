@@ -450,8 +450,6 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ViewAndEdit";
             this.Size = new System.Drawing.Size(589, 346);
-            this.Load += new System.EventHandler(this.On_load);
-            this.VisibleChanged += new System.EventHandler(this.On_VisibleChange);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TableAluno)).EndInit();

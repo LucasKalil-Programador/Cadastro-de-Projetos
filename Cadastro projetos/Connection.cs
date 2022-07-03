@@ -8,7 +8,7 @@ using Cadastro_projetos.Entities;
 
 namespace Cadastro_projetos.SQLConnection
 {
-    internal class Connection
+    public static class Connection
     {
 
         public const string ConnectionString = "server=localhost;database=cadastro_projeto_db;uid=root;pwd=admin;";
@@ -82,8 +82,11 @@ namespace Cadastro_projetos.SQLConnection
 
         public static bool DeleteAluno(Aluno aluno)
         {
-            MySqlCommand cmd = new ($"DELETE FROM Aluno WHERE idAluno = {aluno.id};", connection);
-            return cmd.ExecuteNonQuery() != -1;
+            lock (connection)
+            {
+                MySqlCommand cmd = new($"DELETE FROM Aluno WHERE idAluno = {aluno.id};", connection);
+                return cmd.ExecuteNonQuery() != -1;
+            }
         }
     }
 }

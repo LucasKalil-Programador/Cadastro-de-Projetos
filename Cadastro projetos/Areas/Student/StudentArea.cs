@@ -36,10 +36,11 @@ namespace Cadastro_projetos.Student
             ViewAndEditButton.BackColor = SystemColors.ActiveCaption;
             RegisterButton.BackColor = SystemColors.ControlLight;
 
+            UserControlStudent.viewAndEdit1.On_ChangeForThis();
             UserControlStudent.viewAndEdit1.Enabled = true;
             UserControlStudent.viewAndEdit1.Visible = true;
             UserControlStudent.Register.Enabled = false;
-            UserControlStudent.Register.Visible = false;
+            UserControlStudent.Register.Visible = false;   
         }
     }
 }
