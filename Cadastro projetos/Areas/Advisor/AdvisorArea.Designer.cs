@@ -81,6 +81,7 @@
             this.RegisterButton.TabIndex = 0;
             this.RegisterButton.Text = "Cadastro";
             this.RegisterButton.UseVisualStyleBackColor = true;
+            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
             // ViewAndEditButton
             // 
@@ -92,9 +93,11 @@
             this.ViewAndEditButton.TabIndex = 2;
             this.ViewAndEditButton.Text = "Visualizar / Edição";
             this.ViewAndEditButton.UseVisualStyleBackColor = true;
+            this.ViewAndEditButton.Click += new System.EventHandler(this.ViewAndEditButton_Click);
             // 
             // subUserControlAdvisor1
             // 
+            this.subUserControlAdvisor1.BackColor = System.Drawing.Color.Silver;
             this.subUserControlAdvisor1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.subUserControlAdvisor1.Location = new System.Drawing.Point(3, 3);
             this.subUserControlAdvisor1.Name = "subUserControlAdvisor1";

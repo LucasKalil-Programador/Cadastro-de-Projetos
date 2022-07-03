@@ -164,7 +164,7 @@ namespace Cadastro_projetos.SQLConnection
         {
             lock (connection)
             {
-                MySqlCommand cmd = new("INSERT INTO Aluno(nome,materias) values " +
+                MySqlCommand cmd = new("INSERT INTO Orientador(nome,materias) values " +
                     $"('{orientador.Name}', '{orientador.Subjects}');", connection);
                 return cmd.ExecuteNonQuery() != -1;
             }
