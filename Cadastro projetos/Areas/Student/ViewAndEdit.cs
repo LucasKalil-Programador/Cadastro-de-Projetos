@@ -19,17 +19,21 @@ namespace Cadastro_projetos.Student
 
         private DataGridViewCellCollection? ActualRow;
 
+        private bool loaded = false;
+
         public ViewAndEdit()
         {
             InitializeComponent();
             pictureBox.Visible = false;
         }
 
+        private void On_load(object sender, EventArgs e) { loaded = true; }
+
         // On visible change
 
         private void On_VisibleChange(object sender, EventArgs e)
         {
-            if (Visible)
+            if (Visible && loaded)
             {
                 UpdateDataGrid(0);
                 PageCountLabel.Text = $"0 / {Connection.CountFromAluno() / 10}";

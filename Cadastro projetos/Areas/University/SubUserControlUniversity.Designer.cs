@@ -1,6 +1,6 @@
-﻿namespace Cadastro_projetos
+﻿namespace Cadastro_projetos.Areas.University
 {
-    partial class UniversityArea
+    partial class SubUserControlUniversity
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -28,17 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // UniversityArea
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Name = "UniversityArea";
-            this.Size = new System.Drawing.Size(561, 415);
-            this.ResumeLayout(false);
-
         }
 
         #endregion

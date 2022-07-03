@@ -86,11 +86,11 @@ namespace Cadastro_projetos.Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.StudentArea);
             this.Controls.Add(this.TeamArea);
             this.Controls.Add(this.AdvisorArea);
             this.Controls.Add(this.ProjectArea);
             this.Controls.Add(this.UniversityArea);
-            this.Controls.Add(this.StudentArea);
             this.Name = "AreasCrontrol";
             this.Size = new System.Drawing.Size(561, 415);
             this.ResumeLayout(false);
