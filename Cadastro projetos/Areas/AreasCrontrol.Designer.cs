@@ -69,7 +69,7 @@ namespace Cadastro_projetos.Window
             // 
             // TeamArea
             // 
-            this.TeamArea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.TeamArea.BackColor = System.Drawing.Color.Silver;
             this.TeamArea.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TeamArea.Location = new System.Drawing.Point(0, 0);
             this.TeamArea.Name = "TeamArea";
@@ -89,11 +89,11 @@ namespace Cadastro_projetos.Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.UniversityArea);
             this.Controls.Add(this.StudentArea);
             this.Controls.Add(this.TeamArea);
             this.Controls.Add(this.AdvisorArea);
             this.Controls.Add(this.ProjectArea);
+            this.Controls.Add(this.UniversityArea);
             this.Name = "AreasCrontrol";
             this.Size = new System.Drawing.Size(561, 415);
             this.ResumeLayout(false);
