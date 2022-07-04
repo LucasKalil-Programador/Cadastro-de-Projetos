@@ -95,5 +95,31 @@ namespace Cadastro_projetos.Areas.Project
         {
             if(ActualRow != null) SetTextAreas(ActualRow);
         }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            if (ActualRow != null)
+            {
+                Connection.DeleteProjeto(new Projeto((string)ActualRow[0].Value, "", "", "", "", 
+                    new Orientador("", "", ""), new Universidade("", "")));
+                ResetAll();
+            }
+        }
+
+        private void ResetAll()
+        {
+            ReferencesTextBox.Text = "Escreva as referencias usadas aqui";
+            DescriptionTextBox.Text = "Escreva a descrição aqui";
+            TypeTextBox.Clear();
+            NameTextBox.Clear();
+
+            int index = int.Parse(PageCountLabel.Text.Split(" / ")[0]);
+            int count = Connection.CountFromAluno();
+
+            if (index < count) UpdateDataGrid(index * LIMIT);
+            PageCountLabel.Text = $"{index} / {count / LIMIT}";
+
+            ActualRow = null;
+        }
     }
 }
