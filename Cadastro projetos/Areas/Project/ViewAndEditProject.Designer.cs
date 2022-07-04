@@ -1,6 +1,6 @@
-﻿namespace Cadastro_projetos
+﻿namespace Cadastro_projetos.Areas.Project
 {
-    partial class ProjectArea
+    partial class ViewAndEditProject
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // ProjectArea
+            // ViewAndEditProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.Name = "ProjectArea";
-            this.Size = new System.Drawing.Size(600, 412);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.Name = "ViewAndEditProject";
+            this.Size = new System.Drawing.Size(594, 346);
             this.ResumeLayout(false);
 
         }

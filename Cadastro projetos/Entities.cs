@@ -53,4 +53,48 @@ namespace Cadastro_projetos.Entities
             this.Subjects = subjects;
         }
     }
+
+    public class Projeto 
+    {
+        public string Id { get; set; }
+
+        public string Name { get; set; }
+
+        public string Type { get; set; }
+
+        public string References { get; set; }
+
+        public string Description { get; set; }
+
+        public Orientador Orientador { get; set; }
+
+        public Universidade Universidade { get; set; }
+
+        public Projeto(string id, string name, string type, string references, string description, Orientador orientador, Universidade universidade)
+        {
+            Id = id;
+            Name = name;
+            Type = type;
+            References = references;
+            Description = description;
+            Orientador = orientador;
+            Universidade = universidade;
+        }
+    }
+
+    public class Team
+    {
+        public string Id { get; set; }
+
+        public Aluno Aluno { get; set; }
+
+        public Projeto Projeto { get; set; }
+
+        public Team(string id, Aluno aluno, Projeto projeto)
+        {
+            Id = id;
+            Aluno = aluno;
+            Projeto = projeto;
+        }
+    }
 }

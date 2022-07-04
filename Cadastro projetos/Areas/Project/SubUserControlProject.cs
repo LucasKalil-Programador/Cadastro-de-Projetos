@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cadastro_projetos
+namespace Cadastro_projetos.Project
 {
-    public partial class ProjectArea : UserControl
+    public partial class SubUserControlProject : UserControl
     {
-        public ProjectArea()
+        public SubUserControlProject()
         {
             InitializeComponent();
         }

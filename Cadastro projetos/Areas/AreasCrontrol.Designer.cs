@@ -1,6 +1,7 @@
 ﻿using Cadastro_projetos.Student;
 using Cadastro_projetos.University;
 using Cadastro_projetos.Advisor;
+using Cadastro_projetos.Project;
 
 namespace Cadastro_projetos.Window
 {
@@ -33,7 +34,7 @@ namespace Cadastro_projetos.Window
         private void InitializeComponent()
         {
             this.AdvisorArea = new Cadastro_projetos.Advisor.AdvisorArea();
-            this.ProjectArea = new Cadastro_projetos.ProjectArea();
+            this.ProjectArea = new Cadastro_projetos.Project.ProjectArea();
             this.StudentArea = new Cadastro_projetos.Student.StudentArea();
             this.TeamArea = new Cadastro_projetos.TeamArea();
             this.UniversityArea = new Cadastro_projetos.University.UniversityArea();

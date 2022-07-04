@@ -22,7 +22,6 @@ namespace Cadastro_projetos.SQLConnection
         }
 
         #region Aluno
-        // sql querys Aluno
 
         public static bool InsertAluno(Aluno aluno)
         {
@@ -92,8 +91,6 @@ namespace Cadastro_projetos.SQLConnection
         #endregion Aluno
 
         #region Universidade
-
-        // sql querys Universidade
 
         public static bool InsertUniversidade(Universidade universidade)
         {
@@ -224,5 +221,36 @@ namespace Cadastro_projetos.SQLConnection
         }
 
         #endregion Orientador
+
+        #region Projeto
+
+        public static bool InsertProjeto(Projeto projeto)
+        {
+            lock (connection)
+            {
+                MySqlCommand cmd = new("INSERT INTO Projeto(nome,tipo,descricao,referencias_usadas,Orientador_idOrientador,Universidade_idUniversidade) values " +
+                    $"('{projeto.Name}','{projeto.Type}','{projeto.Description}','{projeto.References}',{projeto.Orientador.Id},{projeto.Universidade.Id});", connection);
+                return cmd.ExecuteNonQuery() != -1;
+            }
+        }
+
+        public static Projeto[] SelectFromProjeto(int index, int limit)
+        {
+            List<Projeto> alunoList = new();
+            lock (connection)
+            {
+                MySqlCommand cmd = new($"SELECT * FROM Projeto LIMIT {index}, {limit};", connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    
+                }
+
+                dataReader.Close();
+            }
+            return alunoList.ToArray();
+        }
+
+        #endregion Projeto
     }
 }
