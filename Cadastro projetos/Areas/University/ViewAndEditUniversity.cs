@@ -33,7 +33,7 @@ namespace Cadastro_projetos.University
             {
                 UpdateDataGrid(0);
                 PageCountLabel.Text = $"0 / {Connection.CountFromUniversidade() / LIMIT}";
-                ErrorAndSucessesLabel.Text = "Aluno ainda não selecionado";
+                ErrorAndSucessesLabel.Text = "Universidade ainda não selecionado";
 
                 NameTextBox.Clear();
             }

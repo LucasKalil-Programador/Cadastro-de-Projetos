@@ -76,7 +76,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(350, 69);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Cadastro novo aluno";
+            this.label1.Text = "Cadastro novo orientador";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
@@ -121,7 +121,7 @@
             this.NameTextBox.Size = new System.Drawing.Size(172, 29);
             this.NameTextBox.TabIndex = 1;
             // 
-            // dataGridView1
+            // SubjectsTable
             // 
             this.SubjectsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.SubjectsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -130,7 +130,7 @@
             this.SubjectsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SubjectsTable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SubjectsTable.Location = new System.Drawing.Point(3, 45);
-            this.SubjectsTable.Name = "dataGridView1";
+            this.SubjectsTable.Name = "SubjectsTable";
             this.SubjectsTable.RowTemplate.Height = 25;
             this.SubjectsTable.Size = new System.Drawing.Size(350, 98);
             this.SubjectsTable.TabIndex = 2;

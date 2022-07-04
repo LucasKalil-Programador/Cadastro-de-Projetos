@@ -73,7 +73,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(339, 69);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Cadastro novo aluno";
+            this.label1.Text = "Cadastro nova universidade";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2

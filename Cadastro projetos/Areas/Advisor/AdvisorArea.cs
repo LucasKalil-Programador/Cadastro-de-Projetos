@@ -34,6 +34,7 @@ namespace Cadastro_projetos.Advisor
             ViewAndEditButton.BackColor = SystemColors.ActiveCaption;
             RegisterButton.BackColor = SystemColors.ControlLight;
 
+            subUserControlAdvisor1.viewAndEditAdvisor1.On_ChangeForThis();
             subUserControlAdvisor1.viewAndEditAdvisor1.Enabled = true;
             subUserControlAdvisor1.viewAndEditAdvisor1.Visible = true;
             subUserControlAdvisor1.registerAdvisor1.Enabled = false;

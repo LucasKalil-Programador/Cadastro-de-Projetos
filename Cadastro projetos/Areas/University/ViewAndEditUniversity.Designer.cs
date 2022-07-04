@@ -203,7 +203,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(218, 28);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Edição de aluno";
+            this.label1.Text = "Edição de orientador";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel5

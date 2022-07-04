@@ -209,7 +209,7 @@ namespace Cadastro_projetos.SQLConnection
             lock (connection)
             {
                 MySqlCommand cmd = new("UPDATE Orientador SET " +
-                    $"Nome = '{orientador.Name}', Materias = '{orientador.Subjects}';", connection);
+                    $"Nome = '{orientador.Name}', Materias = '{orientador.Subjects}' where idOrientador = {orientador.Id};", connection);
                 return cmd.ExecuteNonQuery() != -1;
             }
         }
