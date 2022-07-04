@@ -92,12 +92,12 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(5, 37);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(5, 36);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(582, 309);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(582, 310);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // tableLayoutPanel4
@@ -121,7 +121,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.42038F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.29299F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.21656F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(174, 309);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(174, 310);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // TypeTextBox
@@ -172,7 +172,7 @@
             this.RegisterButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RegisterButton.Location = new System.Drawing.Point(3, 123);
             this.RegisterButton.Name = "RegisterButton";
-            this.RegisterButton.Size = new System.Drawing.Size(168, 62);
+            this.RegisterButton.Size = new System.Drawing.Size(168, 63);
             this.RegisterButton.TabIndex = 4;
             this.RegisterButton.Text = "Cadastrar";
             this.RegisterButton.UseVisualStyleBackColor = true;
@@ -185,7 +185,7 @@
             this.tableLayoutPanel6.Controls.Add(this.ErrorOrSucessesLabel, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.pictureBox1, 0, 1);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 191);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 192);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.41026F));
@@ -227,7 +227,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(197, 303);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(197, 304);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // DescriptionTextBox
@@ -236,14 +236,14 @@
             this.DescriptionTextBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DescriptionTextBox.Location = new System.Drawing.Point(3, 3);
             this.DescriptionTextBox.Name = "DescriptionTextBox";
-            this.DescriptionTextBox.Size = new System.Drawing.Size(191, 145);
+            this.DescriptionTextBox.Size = new System.Drawing.Size(191, 146);
             this.DescriptionTextBox.TabIndex = 0;
             this.DescriptionTextBox.Text = "Escreva a descrição aqui";
             // 
             // ReferencesTextBox
             // 
             this.ReferencesTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ReferencesTextBox.Location = new System.Drawing.Point(3, 154);
+            this.ReferencesTextBox.Location = new System.Drawing.Point(3, 155);
             this.ReferencesTextBox.Name = "ReferencesTextBox";
             this.ReferencesTextBox.Size = new System.Drawing.Size(191, 146);
             this.ReferencesTextBox.TabIndex = 1;
@@ -261,7 +261,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(199, 303);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(199, 304);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // TableUniversity
@@ -271,7 +271,7 @@
             this.Id,
             this.dataGridViewTextBoxColumn1});
             this.TableUniversity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TableUniversity.Location = new System.Drawing.Point(3, 154);
+            this.TableUniversity.Location = new System.Drawing.Point(3, 155);
             this.TableUniversity.MultiSelect = false;
             this.TableUniversity.Name = "TableUniversity";
             this.TableUniversity.ReadOnly = true;
@@ -308,7 +308,7 @@
             this.TableAdvisor.Name = "TableAdvisor";
             this.TableAdvisor.ReadOnly = true;
             this.TableAdvisor.RowTemplate.Height = 25;
-            this.TableAdvisor.Size = new System.Drawing.Size(193, 145);
+            this.TableAdvisor.Size = new System.Drawing.Size(193, 146);
             this.TableAdvisor.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn2
@@ -348,7 +348,7 @@
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(582, 37);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(582, 36);
             this.tableLayoutPanel7.TabIndex = 2;
             // 
             // label1
@@ -358,9 +358,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(534, 37);
+            this.label1.Size = new System.Drawing.Size(534, 36);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Cadastro de projeto";
+            this.label1.Text = "        Cadastro de projeto";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // RefreshButton
@@ -371,7 +371,7 @@
             this.RefreshButton.Location = new System.Drawing.Point(540, 0);
             this.RefreshButton.Margin = new System.Windows.Forms.Padding(0);
             this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(42, 37);
+            this.RefreshButton.Size = new System.Drawing.Size(42, 36);
             this.RefreshButton.TabIndex = 2;
             this.RefreshButton.UseVisualStyleBackColor = true;
             this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);

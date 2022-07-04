@@ -63,7 +63,7 @@ namespace Cadastro_projetos.Areas.Project
             string type, string iDAdvisor, string iDUniversiry)
         {
             pictureBox1.Visible = true;
-            Projeto projeto = new Projeto(String.Empty, name, type, references, description, 
+            Projeto projeto = new (String.Empty, name, type, references, description, 
                 new Orientador(iDAdvisor, string.Empty, string.Empty),
                 new Universidade(iDUniversiry, string.Empty));
             bool result = Connection.InsertProjeto(projeto);
@@ -90,8 +90,8 @@ namespace Cadastro_projetos.Areas.Project
             bool descriptionIsValid = Regex.IsMatch(description, "[A-z].+");
             bool nameIsValid = Regex.IsMatch(name,"[A-z].+");
             bool typeIsValid = Regex.IsMatch(type,"[A-z].+");
-            bool iDAdvisorIsValid = iDAdvisor != null ? Regex.IsMatch(iDAdvisor,"[0-9]+") : false;
-            bool iDUniversiryIsValid = iDUniversiry != null ? Regex.IsMatch(iDUniversiry,"[0-9]+") : false;
+            bool iDAdvisorIsValid = iDAdvisor != null && Regex.IsMatch(iDAdvisor,"[0-9]+");
+            bool iDUniversiryIsValid = iDUniversiry != null && Regex.IsMatch(iDUniversiry,"[0-9]+");
 
             if(referencesIsValid && descriptionIsValid && nameIsValid && typeIsValid && iDAdvisorIsValid && iDUniversiryIsValid)
             {

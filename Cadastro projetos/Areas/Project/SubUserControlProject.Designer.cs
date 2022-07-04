@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.viewProjects1 = new Cadastro_projetos.Areas.Project.ViewProjects();
+            this.viewProjects1 = new Cadastro_projetos.Areas.Project.ViewAndEditProjects();
             this.registerProject1 = new Cadastro_projetos.Areas.Project.RegisterProject();
             this.SuspendLayout();
             // 
@@ -65,7 +65,7 @@
 
         #endregion
 
-        public ViewProjects viewProjects1;
+        public ViewAndEditProjects viewProjects1;
         public RegisterProject registerProject1;
     }
 }

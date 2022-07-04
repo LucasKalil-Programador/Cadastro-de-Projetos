@@ -289,9 +289,9 @@ namespace Cadastro_projetos.SQLConnection
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    Orientador orientador = new Orientador(String.Empty, dataReader.GetString(5), dataReader.GetString(6));
-                    Universidade universidade = new Universidade(string.Empty, dataReader.GetString(7));
-                    Projeto projeto = new Projeto(
+                    Orientador orientador = new (String.Empty, dataReader.GetString(5), dataReader.GetString(6));
+                    Universidade universidade = new (string.Empty, dataReader.GetString(7));
+                    Projeto projeto = new (
                         id: dataReader.GetString(0),
                         name: dataReader.GetString(1),
                         description: dataReader.GetString(2),

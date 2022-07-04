@@ -76,7 +76,7 @@
             this.ViewAndEditButton.Name = "ViewAndEditButton";
             this.ViewAndEditButton.Size = new System.Drawing.Size(204, 54);
             this.ViewAndEditButton.TabIndex = 2;
-            this.ViewAndEditButton.Text = "Visualizar";
+            this.ViewAndEditButton.Text = "Visualizar/Edição";
             this.ViewAndEditButton.UseVisualStyleBackColor = true;
             this.ViewAndEditButton.Click += new System.EventHandler(this.ViewAndEditButton_Click);
             // 
