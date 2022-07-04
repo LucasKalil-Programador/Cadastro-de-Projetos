@@ -34,6 +34,7 @@ namespace Cadastro_projetos.Project
             ViewAndEditButton.BackColor = SystemColors.ActiveCaption;
             RegisterButton.BackColor = SystemColors.ControlLight;
 
+            subUserControlProject1.viewProjects1.On_ChangeForThis();
             subUserControlProject1.registerProject1.Visible = false;
             subUserControlProject1.registerProject1.Enabled = false;
             subUserControlProject1.viewProjects1.Visible = true;

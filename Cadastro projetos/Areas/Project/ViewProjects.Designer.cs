@@ -39,14 +39,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.RegisterButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.ErrorOrSucessesLabel = new System.Windows.Forms.Label();
+            this.ErrorAndSucessesLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.DescriptionTextBox = new System.Windows.Forms.RichTextBox();
             this.ReferencesTextBox = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.RefreshButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
@@ -55,12 +54,13 @@
             this.NameP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.References = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TypeP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdvisorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subjects = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Universidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.PrevButton = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.PageCountLabel = new System.Windows.Forms.Label();
             this.NextButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -208,7 +208,7 @@
             // 
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Controls.Add(this.ErrorOrSucessesLabel, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.ErrorAndSucessesLabel, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.pictureBox1, 0, 1);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 160);
@@ -219,15 +219,15 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(137, 95);
             this.tableLayoutPanel7.TabIndex = 5;
             // 
-            // ErrorOrSucessesLabel
+            // ErrorAndSucessesLabel
             // 
-            this.ErrorOrSucessesLabel.AutoSize = true;
-            this.ErrorOrSucessesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ErrorOrSucessesLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ErrorOrSucessesLabel.Location = new System.Drawing.Point(3, 0);
-            this.ErrorOrSucessesLabel.Name = "ErrorOrSucessesLabel";
-            this.ErrorOrSucessesLabel.Size = new System.Drawing.Size(131, 43);
-            this.ErrorOrSucessesLabel.TabIndex = 0;
+            this.ErrorAndSucessesLabel.AutoSize = true;
+            this.ErrorAndSucessesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ErrorAndSucessesLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ErrorAndSucessesLabel.Location = new System.Drawing.Point(3, 0);
+            this.ErrorAndSucessesLabel.Name = "ErrorAndSucessesLabel";
+            this.ErrorAndSucessesLabel.Size = new System.Drawing.Size(131, 43);
+            this.ErrorAndSucessesLabel.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -277,17 +277,16 @@
             // 
             // tableLayoutPanel10
             // 
-            this.tableLayoutPanel10.ColumnCount = 2;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.26316F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.73684F));
+            this.tableLayoutPanel10.ColumnCount = 1;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel10.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.button1, 1, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(2, 0);
             this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel10.Size = new System.Drawing.Size(285, 30);
             this.tableLayoutPanel10.TabIndex = 2;
             // 
@@ -298,31 +297,19 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(237, 30);
+            this.label1.Size = new System.Drawing.Size(279, 30);
             this.label1.TabIndex = 1;
-            this.label1.Text = "        Editar de projeto";
+            this.label1.Text = "Editar de projeto";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::Cadastro_projetos.Properties.Resources.refresh;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(243, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 30);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.Controls.Add(this.RefreshButton, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.DeleteButton, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.DeleteButton, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 297);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -342,6 +329,7 @@
             this.RefreshButton.Size = new System.Drawing.Size(59, 46);
             this.RefreshButton.TabIndex = 0;
             this.RefreshButton.UseVisualStyleBackColor = true;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
             // DeleteButton
             // 
@@ -349,7 +337,7 @@
             this.DeleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.DeleteButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DeleteButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.DeleteButton.Location = new System.Drawing.Point(174, 0);
+            this.DeleteButton.Location = new System.Drawing.Point(0, 0);
             this.DeleteButton.Margin = new System.Windows.Forms.Padding(0);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(58, 46);
@@ -366,6 +354,7 @@
             this.NameP,
             this.Description,
             this.References,
+            this.TypeP,
             this.AdvisorName,
             this.Subjects,
             this.Universidade});
@@ -375,6 +364,7 @@
             this.DataGrid.RowTemplate.Height = 25;
             this.DataGrid.Size = new System.Drawing.Size(291, 288);
             this.DataGrid.TabIndex = 1;
+            this.DataGrid.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.On_RowClick);
             // 
             // iD
             // 
@@ -404,6 +394,11 @@
             this.References.Name = "References";
             this.References.Width = 92;
             // 
+            // TypeP
+            // 
+            this.TypeP.HeaderText = "Tipo";
+            this.TypeP.Name = "TypeP";
+            // 
             // AdvisorName
             // 
             this.AdvisorName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -431,7 +426,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.Controls.Add(this.PrevButton, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label4, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.PageCountLabel, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.NextButton, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(300, 297);
@@ -451,18 +446,19 @@
             this.PrevButton.Size = new System.Drawing.Size(96, 46);
             this.PrevButton.TabIndex = 2;
             this.PrevButton.UseVisualStyleBackColor = true;
+            this.PrevButton.Click += new System.EventHandler(this.PrevButton_Click);
             // 
-            // label4
+            // PageCountLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(99, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 46);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "0 / 0";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PageCountLabel.AutoSize = true;
+            this.PageCountLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PageCountLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PageCountLabel.Location = new System.Drawing.Point(99, 0);
+            this.PageCountLabel.Name = "PageCountLabel";
+            this.PageCountLabel.Size = new System.Drawing.Size(90, 46);
+            this.PageCountLabel.TabIndex = 0;
+            this.PageCountLabel.Text = "0 / 0";
+            this.PageCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NextButton
             // 
@@ -474,6 +470,7 @@
             this.NextButton.Size = new System.Drawing.Size(99, 46);
             this.NextButton.TabIndex = 1;
             this.NextButton.UseVisualStyleBackColor = true;
+            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
             // ViewAndEditProjects
             // 
@@ -508,13 +505,6 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Button RefreshButton;
         private DataGridView DataGrid;
-        private DataGridViewTextBoxColumn iD;
-        private DataGridViewTextBoxColumn NameP;
-        private DataGridViewTextBoxColumn Description;
-        private DataGridViewTextBoxColumn References;
-        private DataGridViewTextBoxColumn AdvisorName;
-        private DataGridViewTextBoxColumn Subjects;
-        private DataGridViewTextBoxColumn Universidade;
         private Button DeleteButton;
         private TableLayoutPanel tableLayoutPanel3;
         private TableLayoutPanel tableLayoutPanel4;
@@ -526,16 +516,23 @@
         private Label label3;
         private Button RegisterButton;
         private TableLayoutPanel tableLayoutPanel7;
-        private Label ErrorOrSucessesLabel;
+        private Label ErrorAndSucessesLabel;
         private PictureBox pictureBox1;
         private TableLayoutPanel tableLayoutPanel8;
         private RichTextBox DescriptionTextBox;
         private RichTextBox ReferencesTextBox;
         private TableLayoutPanel tableLayoutPanel10;
         private Label label1;
-        private Button button1;
-        private Label label4;
+        private Label PageCountLabel;
         private Button NextButton;
         private Button PrevButton;
+        private DataGridViewTextBoxColumn iD;
+        private DataGridViewTextBoxColumn NameP;
+        private DataGridViewTextBoxColumn Description;
+        private DataGridViewTextBoxColumn References;
+        private DataGridViewTextBoxColumn TypeP;
+        private DataGridViewTextBoxColumn AdvisorName;
+        private DataGridViewTextBoxColumn Subjects;
+        private DataGridViewTextBoxColumn Universidade;
     }
 }

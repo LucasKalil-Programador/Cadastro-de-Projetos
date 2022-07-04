@@ -275,7 +275,7 @@ namespace Cadastro_projetos.SQLConnection
             }
         }
 
-        public static Projeto[] SelectFromProjeto()
+        public static Projeto[] SelectFromProjeto(int index, int limit)
         {
             List<Projeto> alunoList = new();
             lock (connection)
@@ -284,7 +284,7 @@ namespace Cadastro_projetos.SQLConnection
                   "inner join orientador o " +
                   "inner join universidade u " +
                   "where p.Orientador_idOrientador = o.idOrientador " +
-                  $"and p.Universidade_idUniversidade = u.idUniversidade;", connection);
+                  $"and p.Universidade_idUniversidade = u.idUniversidade LIMIT {index}, {limit};", connection);
                
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
@@ -313,6 +313,19 @@ namespace Cadastro_projetos.SQLConnection
             {
                 MySqlCommand cmd = new($"DELETE FROM Projeto WHERE idProjeto = {projeto.Id};", connection);
                 return cmd.ExecuteNonQuery() != -1;
+            }
+        }
+
+        public static int CountFromProjeto()
+        {
+            lock (connection)
+            {
+                MySqlCommand cmd = new($"SELECT COUNT(*) FROM Projeto;", connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                int count = 0;
+                if (dataReader.Read()) count = dataReader.GetInt32(0);
+                dataReader.Close();
+                return count;
             }
         }
 
