@@ -203,6 +203,7 @@
             this.RegisterButton.TabIndex = 4;
             this.RegisterButton.Text = "Editar";
             this.RegisterButton.UseVisualStyleBackColor = true;
+            this.RegisterButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // tableLayoutPanel7
             // 

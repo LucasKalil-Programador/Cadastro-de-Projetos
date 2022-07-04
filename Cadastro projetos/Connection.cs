@@ -316,6 +316,15 @@ namespace Cadastro_projetos.SQLConnection
             }
         }
 
+        public static bool UpdateProjeto(Projeto projeto)
+        {
+            lock (connection)
+            {
+                MySqlCommand cmd = new($"UPDATE Projeto Set nome = '{projeto.Name}', tipo = '{projeto.Type}', descricao = '{projeto.Description}', referencias_usadas = '{projeto.References}' WHERE idProjeto = {projeto.Id};", connection);
+                return cmd.ExecuteNonQuery() != -1;
+            }
+        }
+
         public static int CountFromProjeto()
         {
             lock (connection)

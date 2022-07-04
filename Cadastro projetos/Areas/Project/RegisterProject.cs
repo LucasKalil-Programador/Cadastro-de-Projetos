@@ -72,6 +72,8 @@ namespace Cadastro_projetos.Areas.Project
                 this.pictureBox1.BackgroundImage = Properties.Resources.sucesses;
                 ErrorOrSucessesLabel.Text = "Cadastro realizado com sucesso!";
 
+                ReferencesTextBox.Text = "Escreva as referencias usadas aqui";
+                DescriptionTextBox.Text = "Escreva a descrição aqui";
                 NameTextBox.Clear();
                 TypeTextBox.Clear();
 

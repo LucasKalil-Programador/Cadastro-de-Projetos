@@ -22,6 +22,7 @@ namespace Cadastro_projetos.Areas.Project
         public ViewAndEditProjects()
         {
             InitializeComponent();
+            pictureBox1.Visible = false;
         }
 
         // On visible change
@@ -93,14 +94,14 @@ namespace Cadastro_projetos.Areas.Project
 
         private void RefreshButton_Click(object sender, EventArgs e)
         {
-            if(ActualRow != null) SetTextAreas(ActualRow);
+            if (ActualRow != null) SetTextAreas(ActualRow);
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             if (ActualRow != null)
             {
-                Connection.DeleteProjeto(new Projeto((string)ActualRow[0].Value, "", "", "", "", 
+                Connection.DeleteProjeto(new Projeto((string)ActualRow[0].Value, "", "", "", "",
                     new Orientador("", "", ""), new Universidade("", "")));
                 ResetAll();
             }
@@ -120,6 +121,76 @@ namespace Cadastro_projetos.Areas.Project
             PageCountLabel.Text = $"{index} / {count / LIMIT}";
 
             ActualRow = null;
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            if (ActualRow != null)
+            {
+                pictureBox1.Visible = true;
+                string id = (string)ActualRow[0].Value;
+                string references = ReferencesTextBox.Text;
+                string description = DescriptionTextBox.Text;
+                string name = NameTextBox.Text;
+                string type = TypeTextBox.Text;
+
+                if (Validate(references, description, name, type))
+                {
+                    UpdateOnDB(id, references, description, name, type);
+                }
+            }
+        }
+
+        private void UpdateOnDB(string id, string references, string description, string name,
+            string type)
+        {
+            pictureBox1.Visible = true;
+            Projeto projeto = new(id, name, type, references, description,
+                new Orientador(string.Empty, string.Empty, string.Empty),
+                new Universidade(string.Empty, string.Empty));
+            bool result = Connection.UpdateProjeto(projeto);
+            if (result)
+            {
+                UpdateDataGrid(0);
+                this.pictureBox1.BackgroundImage = Properties.Resources.sucesses;
+                ErrorAndSucessesLabel.Text = "Edição realizado com sucesso!";
+                
+                ReferencesTextBox.Text = "Escreva as referencias usadas aqui";
+                DescriptionTextBox.Text = "Escreva a descrição aqui";
+                NameTextBox.Clear();
+                TypeTextBox.Clear();
+
+            }
+            else
+            {
+                this.pictureBox1.BackgroundImage = Properties.Resources.error;
+                ErrorAndSucessesLabel.Text = "Error desconhecido";
+            }
+        }
+
+        private bool Validate(string references, string description, string name,
+            string type)
+        {
+            bool referencesIsValid = Regex.IsMatch(references, "[A-z].+");
+            bool descriptionIsValid = Regex.IsMatch(description, "[A-z].+");
+            bool nameIsValid = Regex.IsMatch(name, "[A-z].+");
+            bool typeIsValid = Regex.IsMatch(type, "[A-z].+");
+
+            if (referencesIsValid && descriptionIsValid && nameIsValid && typeIsValid)
+            {
+                return true;
+            }
+            else
+            {
+                pictureBox1.Visible = true;
+                pictureBox1.BackgroundImage = Properties.Resources.error;
+                ErrorAndSucessesLabel.Text = "Alguns erros foram detectados verifique capos em branco";
+                if (!nameIsValid) NameTextBox.BackColor = Color.Red;
+                if (!typeIsValid) TypeTextBox.BackColor = Color.Red;
+
+
+                return false;
+            }
         }
     }
 }
