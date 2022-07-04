@@ -23,10 +23,10 @@ namespace Cadastro_projetos.Project
             RegisterButton.BackColor = SystemColors.ActiveCaption;
             ViewAndEditButton.BackColor = SystemColors.ControlLight;
 
-            subUserControlProject1.registerProject1.Enabled = true;
             subUserControlProject1.registerProject1.Visible = true;
-            subUserControlProject1.viewAndEditProject1.Enabled = false;
-            subUserControlProject1.viewAndEditProject1.Visible = false;
+            subUserControlProject1.registerProject1.Enabled = true;
+            subUserControlProject1.viewProjects1.Visible = false;
+            subUserControlProject1.viewProjects1.Enabled = false;
         }
 
         private void ViewAndEditButton_Click(object sender, EventArgs e)
@@ -34,10 +34,10 @@ namespace Cadastro_projetos.Project
             ViewAndEditButton.BackColor = SystemColors.ActiveCaption;
             RegisterButton.BackColor = SystemColors.ControlLight;
 
-            subUserControlProject1.viewAndEditProject1.Enabled = true;
-            subUserControlProject1.viewAndEditProject1.Visible = true;
-            subUserControlProject1.registerProject1.Enabled = false;
             subUserControlProject1.registerProject1.Visible = false;
+            subUserControlProject1.registerProject1.Enabled = false;
+            subUserControlProject1.viewProjects1.Visible = true;
+            subUserControlProject1.viewProjects1.Enabled = true;
         }
     }
 }

@@ -168,7 +168,7 @@ namespace Cadastro_projetos.SQLConnection
         {
             lock (connection)
             {
-                MySqlCommand cmd = new($"DELETE FROM Universidade WHERE idUniversidade = {universidade.Id};", connection); 
+                MySqlCommand cmd = new($"DELETE FROM Universidade WHERE idUniversidade = {universidade.Id};", connection);
                 return cmd.ExecuteNonQuery() != -1;
             }
         }
@@ -275,21 +275,45 @@ namespace Cadastro_projetos.SQLConnection
             }
         }
 
-        public static Projeto[] SelectFromProjeto(int index, int limit)
+        public static Projeto[] SelectFromProjeto()
         {
             List<Projeto> alunoList = new();
             lock (connection)
             {
-                MySqlCommand cmd = new($"SELECT * FROM Projeto LIMIT {index}, {limit};", connection);
+                MySqlCommand cmd = new("select p.idProjeto, p.nome, p.descricao, p.tipo, p.referencias_usadas, o.nome," + "o.Materias, u.nome from projeto p " +
+                  "inner join orientador o " +
+                  "inner join universidade u " +
+                  "where p.Orientador_idOrientador = o.idOrientador " +
+                  $"and p.Universidade_idUniversidade = u.idUniversidade;", connection);
+               
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    
+                    Orientador orientador = new Orientador(String.Empty, dataReader.GetString(5), dataReader.GetString(6));
+                    Universidade universidade = new Universidade(string.Empty, dataReader.GetString(7));
+                    Projeto projeto = new Projeto(
+                        id: dataReader.GetString(0),
+                        name: dataReader.GetString(1),
+                        description: dataReader.GetString(2),
+                        type: dataReader.GetString(3),
+                        references: dataReader.GetString(4),
+                        orientador: orientador,
+                        universidade: universidade);
+                    alunoList.Add(projeto);
                 }
 
                 dataReader.Close();
             }
             return alunoList.ToArray();
+        }
+
+        public static bool DeleteProjeto(Projeto projeto)
+        {
+            lock (connection)
+            {
+                MySqlCommand cmd = new($"DELETE FROM Projeto WHERE idProjeto = {projeto.Id};", connection);
+                return cmd.ExecuteNonQuery() != -1;
+            }
         }
 
         #endregion Projeto

@@ -18,7 +18,6 @@ namespace Cadastro_projetos.Areas.Project
         public RegisterProject()
         {
             InitializeComponent();
-            UpdateDataGrids();
             pictureBox1.Visible = false;
         }
 
@@ -109,6 +108,11 @@ namespace Cadastro_projetos.Areas.Project
 
                 return false;
             }
+        }
+
+        private void RefreshButton_Click(object sender, EventArgs e)
+        {
+            UpdateDataGrids();
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cadastro_projetos.Project
+namespace Cadastro_projetos.Areas.Project
 {
     public partial class SubUserControlProject : UserControl
     {

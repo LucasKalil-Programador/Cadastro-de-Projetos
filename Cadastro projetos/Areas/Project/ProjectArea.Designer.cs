@@ -32,6 +32,7 @@
             this.RegisterButton = new System.Windows.Forms.Button();
             this.ViewAndEditButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.subUserControlProject1 = new Cadastro_projetos.Areas.Project.SubUserControlProject();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +85,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.subUserControlProject1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -92,6 +94,15 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.38F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 412);
             this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // subUserControlProject1
+            // 
+            this.subUserControlProject1.BackColor = System.Drawing.Color.Silver;
+            this.subUserControlProject1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.subUserControlProject1.Location = new System.Drawing.Point(3, 3);
+            this.subUserControlProject1.Name = "subUserControlProject1";
+            this.subUserControlProject1.Size = new System.Drawing.Size(594, 346);
+            this.subUserControlProject1.TabIndex = 2;
             // 
             // ProjectArea
             // 
@@ -113,6 +124,6 @@
         private Button RegisterButton;
         private Button ViewAndEditButton;
         private TableLayoutPanel tableLayoutPanel1;
-        private SubUserControlProject subUserControlProject1;
+        private Areas.Project.SubUserControlProject subUserControlProject1;
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Cadastro_projetos.Project
+﻿namespace Cadastro_projetos.Areas.Project
 {
     partial class SubUserControlProject
     {
@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.viewProjects1 = new Cadastro_projetos.Areas.Project.ViewProjects();
             this.registerProject1 = new Cadastro_projetos.Areas.Project.RegisterProject();
-            this.viewAndEditProject1 = new Cadastro_projetos.Areas.Project.ViewAndEditProject();
             this.SuspendLayout();
+            // 
+            // viewProjects1
+            // 
+            this.viewProjects1.BackColor = System.Drawing.Color.Silver;
+            this.viewProjects1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.viewProjects1.Location = new System.Drawing.Point(0, 0);
+            this.viewProjects1.Name = "viewProjects1";
+            this.viewProjects1.Size = new System.Drawing.Size(594, 346);
+            this.viewProjects1.TabIndex = 0;
             // 
             // registerProject1
             // 
@@ -39,23 +48,14 @@
             this.registerProject1.Location = new System.Drawing.Point(0, 0);
             this.registerProject1.Name = "registerProject1";
             this.registerProject1.Size = new System.Drawing.Size(594, 346);
-            this.registerProject1.TabIndex = 0;
-            // 
-            // viewAndEditProject1
-            // 
-            this.viewAndEditProject1.BackColor = System.Drawing.Color.Silver;
-            this.viewAndEditProject1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewAndEditProject1.Location = new System.Drawing.Point(0, 0);
-            this.viewAndEditProject1.Name = "viewAndEditProject1";
-            this.viewAndEditProject1.Size = new System.Drawing.Size(594, 346);
-            this.viewAndEditProject1.TabIndex = 1;
+            this.registerProject1.TabIndex = 1;
             // 
             // SubUserControlProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.Controls.Add(this.viewAndEditProject1);
+            this.Controls.Add(this.viewProjects1);
             this.Controls.Add(this.registerProject1);
             this.Name = "SubUserControlProject";
             this.Size = new System.Drawing.Size(594, 346);
@@ -65,7 +65,7 @@
 
         #endregion
 
-        public Areas.Project.RegisterProject registerProject1;
-        public Areas.Project.ViewAndEditProject viewAndEditProject1;
+        public ViewProjects viewProjects1;
+        public RegisterProject registerProject1;
     }
 }
