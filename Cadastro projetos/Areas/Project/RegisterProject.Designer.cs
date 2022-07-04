@@ -36,25 +36,30 @@
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.RegisterButton = new System.Windows.Forms.Button();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.ErrorOrSucessesLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.DescriptionTextBox = new System.Windows.Forms.RichTextBox();
             this.ReferencesTextBox = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.UniversityTextBox = new System.Windows.Forms.DataGridView();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.TableUniversity = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdvisorTable = new System.Windows.Forms.DataGridView();
-            this.Selection = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TableAdvisor = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RegisterButton = new System.Windows.Forms.Button();
+            this.Subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.UniversityTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AdvisorTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TableUniversity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TableAdvisor)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -108,22 +113,23 @@
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Controls.Add(this.TypeTextBox, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.NameTextBox, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.RegisterButton, 0, 4);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 0, 5);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(203, 0);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 5;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.94268F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.65605F));
+            this.tableLayoutPanel4.RowCount = 6;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.643312F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.10191F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.324841F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.42038F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.29299F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.21656F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(174, 314);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
@@ -131,7 +137,7 @@
             // 
             this.TypeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TypeTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TypeTextBox.Location = new System.Drawing.Point(3, 173);
+            this.TypeTextBox.Location = new System.Drawing.Point(3, 88);
             this.TypeTextBox.Name = "TypeTextBox";
             this.TypeTextBox.Size = new System.Drawing.Size(168, 29);
             this.TypeTextBox.TabIndex = 3;
@@ -140,7 +146,7 @@
             // 
             this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.NameTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NameTextBox.Location = new System.Drawing.Point(3, 50);
+            this.NameTextBox.Location = new System.Drawing.Point(3, 28);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(168, 29);
             this.NameTextBox.TabIndex = 1;
@@ -152,7 +158,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 26);
+            this.label2.Size = new System.Drawing.Size(168, 24);
             this.label2.TabIndex = 0;
             this.label2.Text = "Nome";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -162,12 +168,61 @@
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(3, 104);
+            this.label3.Location = new System.Drawing.Point(3, 61);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(168, 26);
+            this.label3.Size = new System.Drawing.Size(168, 23);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tipo";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // RegisterButton
+            // 
+            this.RegisterButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RegisterButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RegisterButton.Location = new System.Drawing.Point(3, 125);
+            this.RegisterButton.Name = "RegisterButton";
+            this.RegisterButton.Size = new System.Drawing.Size(168, 63);
+            this.RegisterButton.TabIndex = 4;
+            this.RegisterButton.Text = "Cadastrar";
+            this.RegisterButton.UseVisualStyleBackColor = true;
+            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.ErrorOrSucessesLabel, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.pictureBox1, 0, 1);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 194);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.41026F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.58974F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(168, 117);
+            this.tableLayoutPanel6.TabIndex = 5;
+            // 
+            // ErrorOrSucessesLabel
+            // 
+            this.ErrorOrSucessesLabel.AutoSize = true;
+            this.ErrorOrSucessesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ErrorOrSucessesLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ErrorOrSucessesLabel.Location = new System.Drawing.Point(3, 0);
+            this.ErrorOrSucessesLabel.Name = "ErrorOrSucessesLabel";
+            this.ErrorOrSucessesLabel.Size = new System.Drawing.Size(162, 66);
+            this.ErrorOrSucessesLabel.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Cadastro_projetos.Properties.Resources.sucesses;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 66);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(168, 51);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // tableLayoutPanel3
             // 
@@ -207,8 +262,8 @@
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.UniversityTextBox, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.AdvisorTable, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.TableUniversity, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.TableAdvisor, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(380, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -218,79 +273,76 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(199, 308);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
-            // UniversityTextBox
+            // TableUniversity
             // 
-            this.UniversityTextBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.UniversityTextBox.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewCheckBoxColumn1,
+            this.TableUniversity.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TableUniversity.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.dataGridViewTextBoxColumn1});
-            this.UniversityTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UniversityTextBox.Location = new System.Drawing.Point(3, 157);
-            this.UniversityTextBox.Name = "UniversityTextBox";
-            this.UniversityTextBox.ReadOnly = true;
-            this.UniversityTextBox.RowTemplate.Height = 25;
-            this.UniversityTextBox.Size = new System.Drawing.Size(193, 148);
-            this.UniversityTextBox.TabIndex = 1;
+            this.TableUniversity.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TableUniversity.Location = new System.Drawing.Point(3, 157);
+            this.TableUniversity.MultiSelect = false;
+            this.TableUniversity.Name = "TableUniversity";
+            this.TableUniversity.ReadOnly = true;
+            this.TableUniversity.RowTemplate.Height = 25;
+            this.TableUniversity.Size = new System.Drawing.Size(193, 148);
+            this.TableUniversity.TabIndex = 1;
             // 
-            // dataGridViewCheckBoxColumn1
+            // Id
             // 
-            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewCheckBoxColumn1.HeaderText = "";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.Width = 21;
+            this.Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 43;
             // 
             // dataGridViewTextBoxColumn1
             // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn1.HeaderText = "Nome";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 65;
             // 
-            // AdvisorTable
+            // TableAdvisor
             // 
-            this.AdvisorTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AdvisorTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Selection,
-            this.Subject,
-            this.NameI});
-            this.AdvisorTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AdvisorTable.Location = new System.Drawing.Point(3, 3);
-            this.AdvisorTable.Name = "AdvisorTable";
-            this.AdvisorTable.ReadOnly = true;
-            this.AdvisorTable.RowTemplate.Height = 25;
-            this.AdvisorTable.Size = new System.Drawing.Size(193, 148);
-            this.AdvisorTable.TabIndex = 0;
+            this.TableAdvisor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TableAdvisor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.NameI,
+            this.Subject});
+            this.TableAdvisor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TableAdvisor.Location = new System.Drawing.Point(3, 3);
+            this.TableAdvisor.MultiSelect = false;
+            this.TableAdvisor.Name = "TableAdvisor";
+            this.TableAdvisor.ReadOnly = true;
+            this.TableAdvisor.RowTemplate.Height = 25;
+            this.TableAdvisor.Size = new System.Drawing.Size(193, 148);
+            this.TableAdvisor.TabIndex = 0;
             // 
-            // Selection
+            // dataGridViewTextBoxColumn2
             // 
-            this.Selection.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Selection.HeaderText = "";
-            this.Selection.Name = "Selection";
-            this.Selection.ReadOnly = true;
-            this.Selection.Width = 21;
-            // 
-            // Subject
-            // 
-            this.Subject.HeaderText = "Materias";
-            this.Subject.Name = "Subject";
-            this.Subject.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 43;
             // 
             // NameI
             // 
+            this.NameI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.NameI.HeaderText = "Nome";
             this.NameI.Name = "NameI";
             this.NameI.ReadOnly = true;
+            this.NameI.Width = 65;
             // 
-            // RegisterButton
+            // Subject
             // 
-            this.RegisterButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RegisterButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RegisterButton.Location = new System.Drawing.Point(3, 248);
-            this.RegisterButton.Name = "RegisterButton";
-            this.RegisterButton.Size = new System.Drawing.Size(168, 63);
-            this.RegisterButton.TabIndex = 4;
-            this.RegisterButton.Text = "Cadastrar";
-            this.RegisterButton.UseVisualStyleBackColor = true;
+            this.Subject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Subject.HeaderText = "Materias";
+            this.Subject.Name = "Subject";
+            this.Subject.ReadOnly = true;
+            this.Subject.Width = 77;
             // 
             // RegisterProject
             // 
@@ -305,10 +357,13 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.UniversityTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.AdvisorTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TableUniversity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TableAdvisor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -327,13 +382,16 @@
         private Label label2;
         private Label label3;
         private TableLayoutPanel tableLayoutPanel5;
-        private DataGridView AdvisorTable;
-        private DataGridView UniversityTextBox;
-        private DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewCheckBoxColumn Selection;
-        private DataGridViewTextBoxColumn Subject;
-        private DataGridViewTextBoxColumn NameI;
+        private DataGridView TableAdvisor;
+        private DataGridView TableUniversity;
         private Button RegisterButton;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn NameI;
+        private DataGridViewTextBoxColumn Subject;
+        private TableLayoutPanel tableLayoutPanel6;
+        private Label ErrorOrSucessesLabel;
+        private PictureBox pictureBox1;
     }
 }

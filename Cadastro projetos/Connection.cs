@@ -101,6 +101,26 @@ namespace Cadastro_projetos.SQLConnection
             }
         }
 
+        public static Universidade[] SelectAllFromUniversidade()
+        {
+            List<Universidade> universidadeList = new();
+            lock (connection)
+            {
+                MySqlCommand cmd = new($"SELECT * FROM Universidade;", connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    Universidade universidade = new(
+                        dataReader.GetString(0),
+                        dataReader.GetString(1));
+                    universidadeList.Add(universidade);
+                }
+
+                dataReader.Close();
+            }
+            return universidadeList.ToArray();
+        }
+
         public static Universidade[] SelectFromUniversidade(int index, int limit)
         {
             List<Universidade> universidadeList = new();
@@ -173,6 +193,27 @@ namespace Cadastro_projetos.SQLConnection
             lock (connection)
             {
                 MySqlCommand cmd = new($"SELECT * FROM Orientador LIMIT {index}, {limit};", connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    Orientador orientador = new(
+                        dataReader.GetString(0),
+                        dataReader.GetString(1),
+                        dataReader.GetString(2));
+                    alunoList.Add(orientador);
+                }
+
+                dataReader.Close();
+            }
+            return alunoList.ToArray();
+        }
+
+        public static Orientador[] SelectAllFromOrientador()
+        {
+            List<Orientador> alunoList = new();
+            lock (connection)
+            {
+                MySqlCommand cmd = new($"SELECT * FROM Orientador;", connection);
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
