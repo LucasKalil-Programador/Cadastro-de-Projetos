@@ -65,7 +65,7 @@
 
         #endregion
 
-        private Areas.Project.RegisterProject registerProject1;
-        private Areas.Project.ViewAndEditProject viewAndEditProject1;
+        public Areas.Project.RegisterProject registerProject1;
+        public Areas.Project.ViewAndEditProject viewAndEditProject1;
     }
 }

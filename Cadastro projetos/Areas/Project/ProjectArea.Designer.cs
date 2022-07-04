@@ -66,6 +66,7 @@
             this.RegisterButton.TabIndex = 0;
             this.RegisterButton.Text = "Cadastro";
             this.RegisterButton.UseVisualStyleBackColor = true;
+            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
             // ViewAndEditButton
             // 
@@ -77,6 +78,7 @@
             this.ViewAndEditButton.TabIndex = 2;
             this.ViewAndEditButton.Text = "Visualizar / Edição";
             this.ViewAndEditButton.UseVisualStyleBackColor = true;
+            this.ViewAndEditButton.Click += new System.EventHandler(this.ViewAndEditButton_Click);
             // 
             // tableLayoutPanel1
             // 
