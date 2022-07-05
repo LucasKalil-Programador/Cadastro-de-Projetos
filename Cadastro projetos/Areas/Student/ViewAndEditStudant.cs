@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Cadastro_projetos.Entities;
 using Cadastro_projetos.SQLConnection;
-using Cadastro_projetos.Entities;
 using System.Text.RegularExpressions;
 
 namespace Cadastro_projetos.Student
@@ -132,7 +123,7 @@ namespace Cadastro_projetos.Student
 
         private void UpdateDB(string id, string name, string semester, string registerNumber)
         {
-            Aluno aluno = new (id, name, registerNumber, semester);
+            Aluno aluno = new(id, name, registerNumber, semester);
             bool result = Connection.UpdateAluno(aluno);
             if (result)
             {
@@ -156,7 +147,7 @@ namespace Cadastro_projetos.Student
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            if(ActualRow != null)
+            if (ActualRow != null)
             {
                 Connection.DeleteAluno(new Aluno((string)ActualRow[0].Value, "", "", ""));
                 ResetAll();

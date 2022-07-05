@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Cadastro_projetos.Entities;
 using Cadastro_projetos.SQLConnection;
-using Cadastro_projetos.Entities;
 using System.Text.RegularExpressions;
 
 namespace Cadastro_projetos.Areas.Project
@@ -154,7 +145,7 @@ namespace Cadastro_projetos.Areas.Project
                 UpdateDataGrid(0);
                 this.pictureBox1.BackgroundImage = Properties.Resources.sucesses;
                 ErrorAndSucessesLabel.Text = "Edição realizado com sucesso!";
-                
+
                 ReferencesTextBox.Text = "Escreva as referencias usadas aqui";
                 DescriptionTextBox.Text = "Escreva a descrição aqui";
                 NameTextBox.Clear();

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Cadastro_projetos.Entities;
 using MySql.Data.MySqlClient;
-using Cadastro_projetos.Entities;
 
 namespace Cadastro_projetos.SQLConnection
 {
@@ -307,13 +302,13 @@ namespace Cadastro_projetos.SQLConnection
                   "inner join universidade u " +
                   "where p.Orientador_idOrientador = o.idOrientador " +
                   $"and p.Universidade_idUniversidade = u.idUniversidade LIMIT {index}, {limit};", connection);
-               
+
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    Orientador orientador = new (String.Empty, dataReader.GetString(5), dataReader.GetString(6));
-                    Universidade universidade = new (string.Empty, dataReader.GetString(7));
-                    Projeto projeto = new (
+                    Orientador orientador = new(String.Empty, dataReader.GetString(5), dataReader.GetString(6));
+                    Universidade universidade = new(string.Empty, dataReader.GetString(7));
+                    Projeto projeto = new(
                         id: dataReader.GetString(0),
                         name: dataReader.GetString(1),
                         description: dataReader.GetString(2),

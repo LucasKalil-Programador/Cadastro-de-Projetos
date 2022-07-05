@@ -1,15 +1,6 @@
 ﻿using Cadastro_projetos.Entities;
 using Cadastro_projetos.SQLConnection;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Cadastro_projetos.Areas.Project
 {
@@ -30,7 +21,7 @@ namespace Cadastro_projetos.Areas.Project
 
             Orientador[] orientadores = Connection.SelectAllFromOrientador();
             TableAdvisor.Rows.Clear();
-            for(int i = 0; i < orientadores.Length; i++)
+            for (int i = 0; i < orientadores.Length; i++)
                 TableAdvisor.Rows.Add(orientadores[i].Id, orientadores[i].Name, orientadores[i].Subjects);
         }
 
@@ -50,10 +41,11 @@ namespace Cadastro_projetos.Areas.Project
             try
             {
                 iDUniversiry = (string)TableUniversity.SelectedRows[0].Cells[0].Value;
-            } catch { }
-            
+            }
+            catch { }
 
-            if(Validate(references, description, name, type, iDAdvisor, iDUniversiry))
+
+            if (Validate(references, description, name, type, iDAdvisor, iDUniversiry))
             {
                 InsertOnDB(references, description, name, type, iDAdvisor, iDUniversiry);
             }
@@ -63,7 +55,7 @@ namespace Cadastro_projetos.Areas.Project
             string type, string iDAdvisor, string iDUniversiry)
         {
             pictureBox1.Visible = true;
-            Projeto projeto = new (String.Empty, name, type, references, description, 
+            Projeto projeto = new(String.Empty, name, type, references, description,
                 new Orientador(iDAdvisor, string.Empty, string.Empty),
                 new Universidade(iDUniversiry, string.Empty));
             bool result = Connection.InsertProjeto(projeto);
@@ -85,21 +77,21 @@ namespace Cadastro_projetos.Areas.Project
             }
         }
 
-        private bool Validate(string references, string description, string name, 
+        private bool Validate(string references, string description, string name,
             string type, string iDAdvisor, string iDUniversiry)
         {
-            bool referencesIsValid = Regex.IsMatch(references, "[A-z].+"); 
+            bool referencesIsValid = Regex.IsMatch(references, "[A-z].+");
             bool descriptionIsValid = Regex.IsMatch(description, "[A-z].+");
-            bool nameIsValid = Regex.IsMatch(name,"[A-z].+");
-            bool typeIsValid = Regex.IsMatch(type,"[A-z].+");
-            bool iDAdvisorIsValid = iDAdvisor != null && Regex.IsMatch(iDAdvisor,"[0-9]+");
-            bool iDUniversiryIsValid = iDUniversiry != null && Regex.IsMatch(iDUniversiry,"[0-9]+");
+            bool nameIsValid = Regex.IsMatch(name, "[A-z].+");
+            bool typeIsValid = Regex.IsMatch(type, "[A-z].+");
+            bool iDAdvisorIsValid = iDAdvisor != null && Regex.IsMatch(iDAdvisor, "[0-9]+");
+            bool iDUniversiryIsValid = iDUniversiry != null && Regex.IsMatch(iDUniversiry, "[0-9]+");
 
-            if(referencesIsValid && descriptionIsValid && nameIsValid && typeIsValid && iDAdvisorIsValid && iDUniversiryIsValid)
+            if (referencesIsValid && descriptionIsValid && nameIsValid && typeIsValid && iDAdvisorIsValid && iDUniversiryIsValid)
             {
                 return true;
             }
-            else 
+            else
             {
                 pictureBox1.Visible = true;
                 pictureBox1.BackgroundImage = Properties.Resources.error;

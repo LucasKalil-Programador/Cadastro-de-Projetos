@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Cadastro_projetos.Entities;
+﻿using Cadastro_projetos.Entities;
 using Cadastro_projetos.SQLConnection;
+using System.Text.RegularExpressions;
 
 namespace Cadastro_projetos.Advisor
 {
@@ -34,7 +25,7 @@ namespace Cadastro_projetos.Advisor
         private void InsertOnDB(string name, string subjects)
         {
             Orientador orientador = new(String.Empty, name, subjects);
-            bool result = Connection.InsertOrientador(orientador);  
+            bool result = Connection.InsertOrientador(orientador);
             if (result)
             {
                 this.pictureBox.BackgroundImage = Properties.Resources.sucesses;
@@ -64,7 +55,7 @@ namespace Cadastro_projetos.Advisor
 
         private bool ValidName(string name)
         {
-            if(Regex.IsMatch(name, "[a-zA-Z]([a-zA-Z]| )*"))
+            if (Regex.IsMatch(name, "[a-zA-Z]([a-zA-Z]| )*"))
             {
                 NameTextBox.BackColor = Color.White;
                 return true;

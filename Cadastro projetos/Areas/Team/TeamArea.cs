@@ -1,15 +1,6 @@
 ﻿using Cadastro_projetos.Entities;
 using Cadastro_projetos.SQLConnection;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Cadastro_projetos
 {
@@ -83,7 +74,7 @@ namespace Cadastro_projetos
         {
             if (ActualIdAluno != string.Empty && ActualIdProject != string.Empty)
             {
-                Team team = new (string.Empty,
+                Team team = new(string.Empty,
                     new Aluno(ActualIdAluno, string.Empty, string.Empty, string.Empty),
                     new Projeto(ActualIdProject, string.Empty, string.Empty, string.Empty, string.Empty, new Orientador(string.Empty, string.Empty, string.Empty), new Universidade(string.Empty, string.Empty)));
                 Connection.InsertTeam(team);

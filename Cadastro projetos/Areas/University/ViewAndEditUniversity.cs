@@ -1,14 +1,5 @@
-﻿using Cadastro_projetos.SQLConnection;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Cadastro_projetos.Entities;
+﻿using Cadastro_projetos.Entities;
+using Cadastro_projetos.SQLConnection;
 using System.Text.RegularExpressions;
 
 namespace Cadastro_projetos.University
@@ -45,7 +36,7 @@ namespace Cadastro_projetos.University
         {
             int index = int.Parse(PageCountLabel.Text.Split(" / ")[0]);
             int count = Connection.CountFromUniversidade();
-            
+
             if (index < count / LIMIT) UpdateDataGrid(++index * LIMIT);
             PageCountLabel.Text = $"{index} / {count / LIMIT}";
         }

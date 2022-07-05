@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Cadastro_projetos.University
+﻿namespace Cadastro_projetos.University
 {
     public partial class UniversityArea : UserControl
     {
@@ -22,7 +12,7 @@ namespace Cadastro_projetos.University
         {
             RegisterButton.BackColor = SystemColors.ActiveCaption;
             ViewAndEditButton.BackColor = SystemColors.ControlLight;
-            
+
             subUserControlUniversity1.Register.Enabled = true;
             subUserControlUniversity1.Register.Visible = true;
             subUserControlUniversity1.ViewAndEdit.Enabled = false;
@@ -40,6 +30,6 @@ namespace Cadastro_projetos.University
             subUserControlUniversity1.Register.Enabled = false;
             subUserControlUniversity1.Register.Visible = false;
         }
-    
-}
+
+    }
 }

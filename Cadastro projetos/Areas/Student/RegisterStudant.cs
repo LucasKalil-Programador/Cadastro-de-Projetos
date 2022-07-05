@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Cadastro_projetos.Entities;
+﻿using Cadastro_projetos.Entities;
 using Cadastro_projetos.SQLConnection;
 using System.Text.RegularExpressions;
 
@@ -38,7 +29,7 @@ namespace Cadastro_projetos.Student
         private bool ValidationData(string name, string registerNumber)
         {
             bool nameIsValid = Regex.IsMatch(name, "([A-Za-z]| ){1,120}");
-            bool registerNumberIsValid =  Regex.IsMatch(registerNumber, "[0-9]{10}");
+            bool registerNumberIsValid = Regex.IsMatch(registerNumber, "[0-9]{10}");
             ErrorOrSucessesLabel.Text = "";
 
             if (!nameIsValid || !registerNumberIsValid)
@@ -59,7 +50,7 @@ namespace Cadastro_projetos.Student
 
         private void InsertOnDB(string name, string semester, string registerNumber)
         {
-            Aluno aluno = new (String.Empty, name, registerNumber, semester);
+            Aluno aluno = new(String.Empty, name, registerNumber, semester);
             bool result = Connection.InsertAluno(aluno);
             if (result)
             {

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Cadastro_projetos.Entities
+﻿namespace Cadastro_projetos.Entities
 {
     public class Aluno
     {
@@ -20,8 +14,8 @@ namespace Cadastro_projetos.Entities
         {
             this.Id = id;
             this.Name = name;
-            this.RegisterNumber = registerNumber; 
-            this.Semester = semester;   
+            this.RegisterNumber = registerNumber;
+            this.Semester = semester;
         }
     }
 
@@ -54,7 +48,7 @@ namespace Cadastro_projetos.Entities
         }
     }
 
-    public class Projeto 
+    public class Projeto
     {
         public string Id { get; set; }
 
