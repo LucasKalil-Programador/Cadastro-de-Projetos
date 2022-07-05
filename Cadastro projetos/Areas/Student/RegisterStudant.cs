@@ -32,7 +32,7 @@ namespace Cadastro_projetos.Student
             bool registerNumberIsValid = Regex.IsMatch(registerNumber, "[0-9]{10}");
             ErrorOrSucessesLabel.Text = "";
 
-            if (!nameIsValid || !registerNumberIsValid)
+            if ((!nameIsValid) || (!registerNumberIsValid))
                 this.pictureBox.BackgroundImage = Properties.Resources.error;
 
             if (!nameIsValid && !registerNumberIsValid)

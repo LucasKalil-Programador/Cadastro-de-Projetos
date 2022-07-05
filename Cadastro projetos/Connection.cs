@@ -100,6 +100,7 @@ namespace Cadastro_projetos.SQLConnection
         {
             lock (connection)
             {
+                DeleteTeam(aluno.Id);
                 MySqlCommand cmd = new($"DELETE FROM Aluno WHERE idAluno = {aluno.Id};", connection);
                 return cmd.ExecuteNonQuery() != -1;
             }
@@ -430,6 +431,15 @@ namespace Cadastro_projetos.SQLConnection
             lock (connection)
             {
                 MySqlCommand cmd = new($"DELETE FROM Projeto_has_Aluno WHERE Aluno_idAluno = {idAluno} and Projeto_idProjeto = {idProjeto};", connection);
+                return cmd.ExecuteNonQuery() != -1;
+            }
+        }
+
+        public static bool DeleteTeam(string idAluno)
+        {
+            lock (connection)
+            {
+                MySqlCommand cmd = new($"DELETE FROM Projeto_has_Aluno WHERE Aluno_idAluno = {idAluno};", connection);
                 return cmd.ExecuteNonQuery() != -1;
             }
         }

@@ -242,9 +242,9 @@
             // 
             // pictureBox
             // 
+            this.pictureBox.BackgroundImage = global::Cadastro_projetos.Properties.Resources.sucesses;
             this.pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox.Image = global::Cadastro_projetos.Properties.Resources.sucesses;
             this.pictureBox.Location = new System.Drawing.Point(216, 0);
             this.pictureBox.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox.Name = "pictureBox";
@@ -253,13 +253,13 @@
             this.pictureBox.TabIndex = 1;
             this.pictureBox.TabStop = false;
             // 
-            // Register
+            // RegisterStudant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Register";
+            this.Name = "RegisterStudant";
             this.Size = new System.Drawing.Size(589, 346);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
