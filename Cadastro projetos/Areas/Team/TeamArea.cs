@@ -83,9 +83,9 @@ namespace Cadastro_projetos
         {
             if (ActualIdAluno != string.Empty && ActualIdProject != string.Empty)
             {
-                Team team = new Team(string.Empty,
+                Team team = new (string.Empty,
                     new Aluno(ActualIdAluno, string.Empty, string.Empty, string.Empty),
-                    new Projeto(ActualIdProject, string.Empty, string.Empty, string.Empty, string.Empty, null, null));
+                    new Projeto(ActualIdProject, string.Empty, string.Empty, string.Empty, string.Empty, new Orientador(string.Empty, string.Empty, string.Empty), new Universidade(string.Empty, string.Empty)));
                 Connection.InsertTeam(team);
                 ReloadButton_Click(new object(), EventArgs.Empty);
             }
