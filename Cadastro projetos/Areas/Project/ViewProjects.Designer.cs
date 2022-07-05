@@ -363,6 +363,7 @@
             this.DataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGrid.Location = new System.Drawing.Point(300, 3);
             this.DataGrid.Name = "DataGrid";
+            this.DataGrid.ReadOnly = true;
             this.DataGrid.RowTemplate.Height = 25;
             this.DataGrid.Size = new System.Drawing.Size(291, 288);
             this.DataGrid.TabIndex = 1;
@@ -373,6 +374,7 @@
             this.iD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.iD.HeaderText = "ID";
             this.iD.Name = "iD";
+            this.iD.ReadOnly = true;
             this.iD.Width = 43;
             // 
             // NameP
@@ -380,6 +382,7 @@
             this.NameP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.NameP.HeaderText = "Nome";
             this.NameP.Name = "NameP";
+            this.NameP.ReadOnly = true;
             this.NameP.Width = 65;
             // 
             // Description
@@ -387,6 +390,7 @@
             this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Description.HeaderText = "Descriçao";
             this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
             this.Description.Width = 83;
             // 
             // References
@@ -394,18 +398,21 @@
             this.References.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.References.HeaderText = "Referencias";
             this.References.Name = "References";
+            this.References.ReadOnly = true;
             this.References.Width = 92;
             // 
             // TypeP
             // 
             this.TypeP.HeaderText = "Tipo";
             this.TypeP.Name = "TypeP";
+            this.TypeP.ReadOnly = true;
             // 
             // AdvisorName
             // 
             this.AdvisorName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.AdvisorName.HeaderText = "Orientador";
             this.AdvisorName.Name = "AdvisorName";
+            this.AdvisorName.ReadOnly = true;
             this.AdvisorName.Width = 89;
             // 
             // Subjects
@@ -413,6 +420,7 @@
             this.Subjects.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Subjects.HeaderText = "Materias do orientador";
             this.Subjects.Name = "Subjects";
+            this.Subjects.ReadOnly = true;
             this.Subjects.Width = 139;
             // 
             // Universidade
@@ -420,6 +428,7 @@
             this.Universidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Universidade.HeaderText = "Universidade";
             this.Universidade.Name = "Universidade";
+            this.Universidade.ReadOnly = true;
             // 
             // tableLayoutPanel3
             // 

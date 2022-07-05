@@ -55,6 +55,28 @@ namespace Cadastro_projetos.SQLConnection
             return alunoList.ToArray();
         }
 
+        public static Aluno[] SelectAllFromAluno()
+        {
+            List<Aluno> alunoList = new();
+            lock (connection)
+            {
+                MySqlCommand cmd = new($"SELECT * FROM Aluno;", connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    Aluno aluno = new(
+                        dataReader.GetString(0),
+                        dataReader.GetString(1),
+                        dataReader.GetString(2),
+                        dataReader.GetString(3));
+                    alunoList.Add(aluno);
+                }
+
+                dataReader.Close();
+            }
+            return alunoList.ToArray();
+        }
+
         public static int CountFromAluno()
         {
             lock (connection)
@@ -307,6 +329,39 @@ namespace Cadastro_projetos.SQLConnection
             return alunoList.ToArray();
         }
 
+        public static Projeto[] SelectAllFromProjeto()
+        {
+            SelectAllFromAluno();
+            List<Projeto> alunoList = new();
+            lock (connection)
+            {
+                MySqlCommand cmd = new("select p.idProjeto, p.nome, p.descricao, p.tipo, p.referencias_usadas, o.nome," + "o.Materias, u.nome from projeto p " +
+                  "inner join orientador o " +
+                  "inner join universidade u " +
+                  "where p.Orientador_idOrientador = o.idOrientador " +
+                  $"and p.Universidade_idUniversidade = u.idUniversidade;", connection);
+
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    Orientador orientador = new(String.Empty, dataReader.GetString(5), dataReader.GetString(6));
+                    Universidade universidade = new(string.Empty, dataReader.GetString(7));
+                    Projeto projeto = new(
+                        id: dataReader.GetString(0),
+                        name: dataReader.GetString(1),
+                        description: dataReader.GetString(2),
+                        type: dataReader.GetString(3),
+                        references: dataReader.GetString(4),
+                        orientador: orientador,
+                        universidade: universidade);
+                    alunoList.Add(projeto);
+                }
+
+                dataReader.Close();
+            }
+            return alunoList.ToArray();
+        }
+
         public static bool DeleteProjeto(Projeto projeto)
         {
             lock (connection)
@@ -339,5 +394,51 @@ namespace Cadastro_projetos.SQLConnection
         }
 
         #endregion Projeto
+
+        #region Team
+
+        public static bool InsertTeam(Team team)
+        {
+            lock (connection)
+            {
+                MySqlCommand cmd = new($"INSERT INTO Projeto_Has_Aluno(Aluno_IdAluno, Projeto_idProjeto) values ({team.Aluno.Id}, {team.Projeto.Id});", connection);
+                Console.WriteLine(cmd.CommandText);
+                return cmd.ExecuteNonQuery() != -1;
+            }
+        }
+
+        public static Aluno[] SelectFromTeam(string idProjeto)
+        {
+            List<Aluno> alunoList = new();
+            lock (connection)
+            {
+                MySqlCommand cmd = new($"SELECT a.idAluno, a.nome, a.matricula, a.semestre FROM Projeto_has_Aluno pa " +
+                    $"inner join Aluno a where pa.Projeto_idProjeto = {idProjeto} and a.idAluno = pa.Aluno_idAluno;", connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    Aluno aluno = new(
+                        dataReader.GetString(0),
+                        dataReader.GetString(1),
+                        dataReader.GetString(2),
+                        dataReader.GetString(3));
+                    alunoList.Add(aluno);
+                }
+
+                dataReader.Close();
+            }
+            return alunoList.ToArray();
+        }
+
+        public static bool DeleteTeam(string idAluno, string idProjeto)
+        {
+            lock (connection)
+            {
+                MySqlCommand cmd = new($"DELETE FROM Projeto_has_Aluno WHERE Aluno_idAluno = {idAluno} and Projeto_idProjeto = {idProjeto};", connection);
+                return cmd.ExecuteNonQuery() != -1;
+            }
+        }
+
+        #endregion Team
     }
 }
